@@ -1,0 +1,107 @@
+
+#content{
+    margin: 10px;
+    color: black;
+    padding-top: 40px;
+}
+#content .content1{
+    display: inline-block;
+    margin-left: 35px;
+    width: 95%;
+}
+
+#content .content1 ul li{
+    float: left;
+    width: 23%;
+    margin: 0 1.11% 0 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    text-align: 10%;
+}
+#content .content1 ul li a{
+       color: black;
+    }
+    #content .content1 ul li :hover{
+       color: #090382;
+    }   /*content ngang*//*content1*/
+#content .content2{
+    margin-left: 35px;
+    /*width: 90%;*/
+    margin-right: 90px;
+} 
+#content .content2 .content2a{
+    width: 69%;
+    overflow: hidden;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 15px;
+}
+#content .content2 .content2a ul li{
+    display: block;
+    overflow: hidden;
+    margin-bottom: 37px;
+    padding-right: 10px;
+    position: relative;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+#content .content2 .content2a ul li a{
+    color: black;
+}
+#content .content2a ul li img{
+    float: left;
+    margin-right: 20px;
+    width: 40%;
+    height: 40%;
+}
+#content .content2a ul li :hover h3{
+    color: #090382;
+    }/*coten2a*/
+#content .content2 .content2b{
+    float: right;
+    width: 30%;
+    background: #fff;
+    margin-top: 15px;
+}
+#content .content2 .content2b h2{
+    display: block;
+    overflow: hidden;
+    line-height: 1.3em;
+    font-size: 22px;
+    color: #4a4a4a;
+    font-weight: 600;
+    margin: 10px 0;
+    text-align: center;
+    color: black;
+}
+#content .content2 .content2b a{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 2px solid red;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left;
+    color: black;
+    margin-bottom: 22px;
+    
+}
+#content .content2 .content2b a img{
+    float: left;
+    margin-top:13px;
+    margin-right: 10px;
+}
+#content .content2 .content2b .view_more{
+    border:none;
+}
+.view_more span:hover {
+    color: blue;
+    text-decoration: underline; 
+}
+
+/*=======================================================CSS content=======================================================================*/

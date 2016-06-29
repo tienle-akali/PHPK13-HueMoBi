@@ -1,0 +1,540 @@
+body {
+    background: #fff;
+}
+a {
+	text-decoration: none;
+}
+
+header {
+    background: #ebebeb;
+}
+nav a {
+    background: #ebebeb;
+}
+nav a.actmenu {
+    background: #FE99FF;
+}
+nav a:hover {
+    background: #FE99FF;
+}
+section {
+    max-width: 1200px;
+    width: 100%;
+    min-width: 980px;
+    margin: 65px auto 0;
+}
+.search img {
+	float: left;
+}
+
+.breadandfilter {
+    display: block;
+    background: #f7f7f7;
+    border: 1px solid #ececec;
+}
+.breadcrumb {
+    float: left;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 9;
+}
+/*.breadcrumb li:first-child a {
+
+}*/
+.breadcrumb li a {
+    float: left;
+    white-space: nowrap;
+    font-size: 13px;
+    color: #4a90e2;
+    padding: 5px 5px 5px 0;
+}
+
+/*.breadcrumb a:hover, .breadcrumb a:hover * {
+    color: #0082cc;
+}*/
+.breadcrumb li {
+    float: left;
+    overflow: hidden;
+}
+img.icon_home {
+    width: 30px;
+    height: 30px;
+    margin: 1px 4px 0 4px;
+}
+.breadcrumb li span {
+    float: left;
+    font-size: 24px;
+    color: #999;
+    padding: 11px 2px 0px 2px;
+    line-height: 0;
+}
+
+.breadcrumb li h1 {
+    display: inline-block;
+    font-size: 13px;
+    color: #444;
+    font-weight: normal;
+    margin-top: 8px;
+}
+.breadcrumb li h1 a {
+    padding-left: 2px;
+}
+
+/*ket thuc breadcrumd*/
+.filter {
+    margin: 0px;
+    height: 45px;
+    display: block;
+    position: relative;
+}
+.filter li {
+    float: left;
+    padding: 13px 5px 0 5px;
+    font-size: 12px;
+    color: #ababab;
+}
+.filter li label {
+    position: relative;
+}
+.filter li a {
+    display: block;
+    font-size: 13px;
+    color: #288ad6;
+}
+.breadandfilter label {
+    float: none;
+    font-size: 13px;
+    color: #288ad6;
+    margin-bottom: 10px;
+    display: block;
+}
+.filter li .arrdown {
+    height: 0;
+    width: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #288ad6;
+    position: relative;
+    top: 6px;
+    margin-left: 5px;
+    float: right;
+}
+.filter span {
+    padding: 0px;
+}
+.filter li .dropfilter {
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: -75px;
+    z-index: 20;
+    width: 200px;
+    background: none;
+    height: 0;
+    overflow: hidden;
+    transition: height .1s ease-in;
+}
+
+.filter li .dropfilter:before {
+    border-bottom-color: #ddd;
+    border-width: 11px;
+    margin-left: -11px;
+}
+.filter li .dropfilter:after {
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.filter li .dropfilter:after, .filter li .dropfilter:before {
+    bottom: 93.6%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.filter li .dropfilter a:first-child {
+    border-top: 1px solid #ddd;
+    color: #288ad6;
+}
+.filter li .dropfilter a {
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    color: #555;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+.logocheck {
+    background: url(../img/logocheck.png) no-repeat;
+    background-size: 15px;
+}
+
+.filter li .twocolum {
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: -90px;
+    z-index: 20;
+    width: 280px;
+    background: none;
+    height: 0;
+    overflow: hidden;
+    transition: height .1s ease-in;
+}
+
+.filter li .twocolum:before {
+    border-bottom-color: #ddd;
+    border-width: 11px;
+    margin-left: -11px;
+}
+.filter li .twocolum:after {
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.filter li .twocolum:after, .filter li .twocolum:before {
+    bottom: 94.8%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+
+.filter li a {
+    display: block;
+    font-size: 13px;
+    color: #288ad6;
+}
+.filter li .twocolum .all {
+    display: block;
+    font-size: 14px;
+    float: none;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+}
+.filter li .twocolum aside {
+    display: inline-block;
+    float: left;
+    height: 100vh;
+    width: 49.6%;
+    background: #fff;
+}
+.filter li .twocolum aside.left {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter li .twocolum aside.right {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.filter li .twocolum aside a {
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    color: #555;
+    background: #fff;
+}
+/*lọc hãng sản xuất*/
+.filter li.newprod {
+    margin: -5px 0 0;
+}
+.filter li.newprod a {
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #288ad6;
+    text-transform: uppercase;
+    border: 1px solid #288ad5;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+.breadandfilter li.clearfilter {
+    float: right;
+    font-size: 12px;
+    color: #d0021b;
+    cursor: pointer;
+}
+.filter li.apple {
+    float: right;
+}
+.filter li.apple a {
+    padding: 6px 10px 4px 10px;
+    color: #777;
+    border: 1px solid #ccc;
+    background: #fff;
+    text-transform: none;
+}
+
+/*===========tìm kiếm nhanh=================*/
+.fastsearch {
+    display: block;
+    background: #fff;
+    border: 1px solid #ececec;
+    height: 35px;
+    clear: both;
+    margin-top: -1px;
+}
+.fastsearch span {
+    font-size: 12px;
+    color: #666;
+    padding: 8px;
+    float: left;
+}
+.fastsearch a {
+    font-size: 12px;
+    color: #288ad6;
+    padding: 8px;
+    float: left;
+}
+.fastsearch .sortprice {
+    float: right;
+    position: relative;
+    padding: 8px 40px;
+    border-left: 1px solid #ededed;
+}
+.fastsearch .sortprice label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+}
+.fastsearch .sortprice label b {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #999;
+    float: right;
+    position: relative;
+    top: 6px;
+    margin-left: 5px;
+}
+.fastsearch .sortprice .listsort {
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: -1px;
+    z-index: 30;
+    background: #fff;
+    width: 202px;
+    border: 1px solid #ececec;
+    border-top: 0;
+}
+.fastsearch .sortprice .listsort a {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    padding: 10px;
+}
+/*================banner top================*/
+#bannertop {
+    display: block;
+    overflow: hidden;
+    margin: 10px 0;
+}
+#bannertop a.slidesjs-previous.slidesjs-navigation{
+    background: url(../img/banner/prev.png) no-repeat;
+    color: transparent;
+    z-index: 10;
+    padding: 20px;
+    position: relative;
+    top: -85px;
+    
+}
+
+#bannertop a.slidesjs-next.slidesjs-navigation{   
+    background: url(../img/banner/next.png) no-repeat;
+    color: transparent;
+    z-index: 10;
+    padding: 20px;
+    position: relative;
+    top: -85px;
+    left: 440px;
+}
+#bannertop .slidesjs-pagination {
+    display: none;
+}
+/*===========thong tin bao gia san pham================*/
+.mobilecate {
+    display: block;
+    overflow: hidden;
+    margin: 5px auto 0;
+    max-width: 1200px;
+    width: 100%;
+    border-top: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    padding: 0;
+}
+.mobilecate li.feature {
+    width: 33.25%;
+}
+.mobilecate li {
+    float: left;
+    position: relative;
+    width: 16.584%;
+    height: 275px;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+}
+.mobilecate li.tragop {
+    position: absolute;
+    right: 3px;
+    left: auto;
+    top: 3px;
+    bottom: auto;
+    padding: 0;
+    margin: 0;
+    background: #ff6a00;
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+}
+.mobilecate li button {
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    z-index: 10;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #288ad6;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #288ad6;
+}
+.mobilecate li label {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    padding: 5px 5px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #ff6a00;
+}
+.mobilecate li a {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    background: #fff;
+    cursor: pointer;
+}
+.mobilecate li img {
+    display: block;
+    width: auto;
+    height: 120px;
+    margin: 20px auto;
+}
+.mobilecate li h3 {
+    display: block;
+    line-height: 1.3em;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    margin: 0 10px 5px;
+}
+.mobilecate li strong {
+    float: left;
+    font-size: 14px;
+    color: #d0021b;
+    margin: 0 9px 5px;
+}
+.mobilecate li div.promo {
+    clear: both;
+}
+.mobilecate li div {
+    display: block;
+    font-size: 12px;
+    color: #797979;
+    margin: 0 9px;
+}
+.mobilecate li .bginfo {
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    height: 86%;
+    padding: 2% 0;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    pointer-events: none;
+}
+.mobilecate li .bginfo h3 {
+    color: #288ad6;
+    margin: 5px 10px 5px;
+}
+.mobilecate li .bginfo strong {
+    display: inline-block;
+    float: none;
+    font-size: 13px;
+    color: #d0021b;
+    margin-right: 5px;
+}
+.mobilecate li .bginfo span {
+    display: block;
+    color: #666;
+    padding: 2px 6px;
+    text-decoration: none;
+    margin: 0 0 0 5px;
+    font-size: 12px;
+    line-height: 18px;
+}
+.mobilecate li .bginfo label {
+    color: #288ad6;
+    top: 220px;
+    cursor: pointer;
+    right: 10px;
+    left: auto;
+    background-color: #fff;
+}
+.mobilecate li .bginfo button {
+    display: block;
+    position: absolute;
+    width: 70px;
+    bottom: 10px;
+    z-index: 10;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #288ad6;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #288ad6;
+}
+.mobilecate li:hover .bginfo{
+    opacity: 1;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.mobilecate li .bginfo div {
+    border-bottom: 1px solid #ddd; 
+    margin-bottom: 5px;
+}
+

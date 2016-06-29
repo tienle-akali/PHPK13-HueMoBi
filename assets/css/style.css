@@ -1,0 +1,670 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	margin: 0;
+	padding: 0;
+}
+body{
+    background: #f0f0f0;
+	font-family: Arial, sans-serif;
+	min-width: 1024px;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+/*strong {
+	color: red;
+	font-size: 16px;
+}
+
+h3, p {
+	color: black;
+}*/
+
+/*#container{
+    max-width: 1200px;
+    width: 100%;
+    min-width: 980px;
+    margin: 65px auto 0;
+	width:960px;
+	margin:0 auto;
+		
+	}
+CSS định dạng LOGO*/
+header{
+	position: absolute; /*định dạng để cố định header */
+    top: 0; /*sát với viền trên trình duyệt*/
+    min-width: 1024px;
+    background: #FE99FF;
+    width: 100%;
+    height: 55px;
+    
+	}
+.clr {
+	clear: both;
+}
+.headermenu{
+    max-width: 1200px;
+    min-width: 1024px;
+    width: 100%;
+    height: 55px;
+    margin: auto;
+    display: block;	
+    position: relative;
+    background: #000;
+    
+ }
+#search {
+    float: left;
+    width: 220px;
+    height: 35px;
+    margin: 10px 10px 0 0;
+    background: #fff;
+    position: relative;
+    border-radius: 4px;
+}
+.logo {
+	background: black;
+    float: left;
+    width: 165px;
+    display: block;
+    margin: 12px auto 0;
+    margin-left: 10px;
+
+}
+
+a.logo img {
+	width: 156px;
+    height: auto;
+    display: block;
+    margin-top: -7px;
+
+}
+/*CSS input*/
+.input {
+	float: left;
+    width: 162px;
+    margin-left: 8px;
+    padding-top: 3px;
+    border: 0;
+    position: relative;
+    background: #fff;
+    height: 30px;
+    text-indent: 10px;
+    font-size: 13px;
+    outline: none;
+}
+.btntop {
+    float: right;
+    width: 40px;
+    height: 35px;
+    border: 0;
+    background: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;/*bo viền*/
+}
+
+button.btntop img{
+ 	width: 20px;
+ 	height: 20px;
+ 	display: block;
+    margin: 1px auto 0;
+ }
+
+button.btntop:hover{
+ 	background-color: #FE99FF;
+}
+/*CSS định dạng list danh sách*/
+nav {
+    width: auto;
+    height: 55px;
+    background: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav a {
+	float: left;
+    display: table-cell;
+    width: 88px;
+    padding: 5px 0 3px 0;
+    color: #000;
+    background: #FE99FF;
+    font-size: 11px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav a:hover {
+	background-color: #fff;
+}
+nav a.khuyenmai {
+	width: 90px;
+}
+nav a.mobile {
+	width: 89px;
+}
+/*nav a.actmenu {
+    background: #fdd504;
+}*/
+nav a img {
+	width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0px auto 3px;
+}
+/*===================header=========================*/
+
+#slides {
+	float: left;
+	width: 800px;
+    height: 353px;
+	position: relative;
+}
+
+#slides a.slidesjs-previous.slidesjs-navigation{
+    background: url(../img/banner/prev2.png) no-repeat;
+    background-size: 60px;
+    color: transparent;
+    z-index: 10;
+    padding: 20px;
+    position: relative;
+    bottom: 180px;
+    float: left;
+    left: 12px;
+}
+
+#slides a.slidesjs-next.slidesjs-navigation{
+    background: url(../img/banner/next2.png) no-repeat;
+    background-size: 60px;
+    color: transparent;
+    z-index: 10;
+    padding: 20px;
+    position: relative;
+    bottom: 180px;
+    float: right;
+}
+
+#slides ul.slidesjs-pagination {
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+ul.slidesjs-pagination li {
+    width: auto;
+}
+li.slidesjs-pagination-item a {
+    width: 120px;
+    color: transparent;
+    float: left;
+    height: 50px;
+    background: url(../img/featured-button-off.png) no-repeat;
+}
+
+
+#slides a.active{
+	display: block;
+	background: url(../img/featured-button-on.png) no-repeat;
+	
+}
+
+
+}
+
+#qcao {
+	width: 30%;
+    float: right;
+    overflow: hidden;
+}
+#qcao a:first-child {
+    margin-bottom: 5px;
+}
+#qcao a {
+    display: block;
+}
+#qcao img {
+ margin-left: 10px;
+}
+
+
+/*=======================================================CSS conten=======================================================================*/
+.tincongnghe{
+    width: 32.7%;
+    float: right;
+    overflow: hidden;
+    margin-top: 10px;
+    max-height: 550px;
+}
+.tincongnghe figure {
+    display: block;
+    overflow: hidden;
+    border-bottom: 3px solid #FE99FF;
+    background: #f0f0f0;
+}
+.tincongnghe .right {
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+.tincongnghe h2 {
+    float: left;
+    padding: 12px 20px 8px;
+    background: #FE99FF;
+    line-height: 1.3em;
+    font-size: 13px;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tincongnghe figure a {
+    float: right;
+    padding: 7px 15px;
+    background: #D6D6D6;
+    border-radius: 2px;
+    font-size: 11px;
+    color: #288ad8;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+.tincongnghe ul {
+    display: block;
+    overflow: hidden;
+}
+.tincongnghe li {
+    display: block;
+    padding: 9px 10px;
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+}
+.tincongnghe li a {
+    display: block;
+    overflow: hidden;
+}
+.tincongnghe li img{
+    float: right;
+    width: 100px;
+    height: 55px;
+    margin-left: 10px;
+}
+.tincongnghe span {
+    color: black;
+    font-size: 14px;
+}
+/*tin tức*/
+.sanpham {
+	display: block;
+    width: 66.5%;;
+    float: left;
+    margin-top: 10px;
+
+}
+.sanpham li{
+	float: left;
+    position: relative;
+	background-color: white;
+	width: 49.45%;
+	height: 270px;
+	margin-bottom: 10px;
+	background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 1.1%;
+}
+.sanpham li:nth-child(2n) {
+    margin-right: 0;
+} /*đặt margin-right cho cột thứ 2 là 0*/
+.sanpham li a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    cursor: pointer;
+}
+.sanpham li img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    background: url(https://cdn.tgdd.vn/v2015/Content/desktop/images/loading.svg) center center no-repeat;
+    min-height: 130px;
+}
+
+.sanpham li h3 {
+    display: block;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 245px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	color: black;
+	margin: 10px 0px 0px 10px;
+}
+.sanpham li strong {
+	font-size: 14px;
+	margin-left: 10px;
+    float: left;
+    color: red;
+}
+.sanpham li div {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin: 0 9px;
+    padding-top: 5px;
+}
+.sanpham li button {
+	background: #fff;
+	border: 1px solid #FE99FF;
+	border-radius: 4px;
+	padding: 6px 20px;
+	position: absolute;
+	right: 20px;
+	z-index: 10;
+	bottom: 50px;
+	font-size: 14px;
+	color: #FE99FF;
+    cursor: pointer;
+}
+.sanpham li label {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    padding: 5px 0;
+    width: 125px;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.3em;
+    text-align: center;
+}
+.sanpham a button:hover{
+	background: #FE99FF;
+	color: #fff;
+}
+.sanpham a label {
+	position: absolute;
+	color: #999;
+	font-size: 12px;
+	right: 15px;
+	line-height: 16px;
+	text-align: center;
+	padding: 7px;
+	width: 120px;
+}
+
+.sanpham li .hover {
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    padding: 25px 20px 0;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sanpham li .hover strong {
+    position: absolute;
+    top: 26px;
+    right: 6px;
+    font-size: 16px;
+    color: red;
+}
+.sanpham li .hover div {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.sanpham li .hover span {
+	display: block;
+    color: #666;
+    padding: 2px 10px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 18px;
+}
+.sanpham li .hover label {
+    color: blue;
+    bottom: 20px;
+}
+.sanpham li .hover label:hover {
+    color: red;
+}
+.sanpham li:hover .hover{
+	opacity: 1;
+	transition-duration: .5s;
+
+}
+/*============ sản phẩm full chiều rộng ==========================*/
+.sanpham.fullwidth {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.sanpham.fullwidth li:nth-child(2n+1) {
+    clear: none;
+}
+.sanpham.fullwidth li {
+    width: 32.8%;
+    margin-right: 0.8%;
+}
+.sanpham.fullwidth li:nth-child(3n+3) {
+    margin-right: 0;
+    float: right;
+}
+ /*============================ket thuc style san pham==============================*/
+
+
+/*.button{
+	display: block;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}*/
+
+.moreproduct {
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0;
+}
+.moreproduct a {
+    border: 1px solid violet;
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: violet;
+    margin-right: 10px;
+}
+.moreproduct a:hover {
+    color: #fff;
+    background: violet;
+}
+/*=============keyword====================*/
+.keyword {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    background-color: #e8e8e8;
+    margin: 10px auto;
+    margin-bottom: -15px;
+    width: 100%
+}
+.keyword a, .keyword span {
+    display: inline-block;
+    padding: 8px;
+    font-size: 13px;
+    color: #777;
+}
+/*===============================================CSS FOOTER====================================================================*/
+footer {
+    width: 100%;
+    min-width: 980px;
+    margin: 15px auto 0 auto;
+    background: #fff;
+    overflow: hidden;
+    border-top: 3px solid #e8e8e8;
+    clear: both;
+}
+.rowfoot1 {
+    display: block;
+    overflow: hidden;
+    margin: 15px auto;
+    width: 1160px;
+    min-width: 980px;
+    max-width: 98%;
+    margin-bottom: 0;
+}
+.colfoot {
+    float: left;
+    width: 30%;
+    margin: 0;
+    position: relative;
+}
+.colfoot li {
+    float: none;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    font-size: 15px;
+    color: #444;
+}
+.colfoot li h4 {
+    font-size: 16px;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    display: block;
+    color: violet;
+    margin-bottom: 5px;
+}
+.colfoot li a {
+    display: block;
+    color: #288ad6;
+    font-size: 14px;
+    line-height: 25px;
+    padding-top: 5px;
+}
+.colfoot li.showmore {
+    font-weight: bold;
+}
+.colfoot li.hidden {
+    display: none;
+}
+.colfoot li a.viewmb {
+    font-weight: 600;
+}
+.colfoot li a.viewmb img {
+	width: 25px;
+    margin: -8px;
+    padding-left: 9px;
+}
+.colfoot li a span {
+    color: black;
+}
+.answers {
+    width: 25%;
+}
+.rowfoot2 {
+    width: 100%;
+    min-width: 980px;
+    margin: 10px auto 0;
+    overflow: hidden;
+    background: #f0f0f0;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+}
+.rowfoot2 .ctn {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.rowfoot2 p {
+    float: left;
+    width: 465px;
+    margin-left: 10px;
+    font-size: 13px;
+    line-height: 22px;
+    color: #999;
+}
+
+.rowfoot2 a {
+    color: #288ad6;
+}
+.pagepay {
+    float: left;
+    overflow: hidden;
+    margin: 0;
+    width: 270px;
+}
+.pagepay span, .registered span, .ssl span {
+    display: block;
+    font-size: 13px;
+    color: #999;
+    line-height: 22px;
+}
+.pagepay a img {
+	width: 40px;
+}
+.pagepay a span {
+	font-size: 14px;
+	color: #000;
+}
+.registered {
+    float: left;
+    margin: 0 25px 0 40px;
+    overflow: hidden;
+    text-align: center;
+}
+.registered a img {
+	width: 130px;
+    padding: 10px;
+}
+.ssl {
+    float: right;
+    width: 180px;
+    text-align: center;
+}
+.ssl a img {
+	width: 115px;
+    padding: 10px;
+}
+.none {
+	display: none;
+}
+#back-top span:before {
+    cursor: pointer;
+    background: #FE99FF;
+    width: 40px;
+    position: fixed;
+    right: 20px;
+    bottom: 45px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    -webkit-transition: all .2s linear;
+    color: #000;
+    content: "▲";
+    opacity: .7;
+    z-index: 8;
+}
