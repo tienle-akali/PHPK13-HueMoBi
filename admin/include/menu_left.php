@@ -6,7 +6,7 @@
     </div>
     <hr>
     <div>
-      <a class="btn" href="">Read User</a>
+      <a class="btn" href="userRead.php">Read User</a>
     </div>
   </div>
 <div class="well sidebar-nav">

@@ -1,4 +1,4 @@
-<?php $namePage="Producer::HueMobi"; ?>
+<?php $namePage="Danh sách Nhà sản xuất"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -60,7 +60,7 @@
 				} else {
 				    echo "0 results";
 				}
-			   	Database::disconnect();
+			   
 			  	?>
 			      </tbody>
             </table>

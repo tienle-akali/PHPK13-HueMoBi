@@ -18,8 +18,8 @@
 		// delete data
 		$sql = "DELETE FROM category WHERE id=$id";
 			if(mysqli_query($conn,$sql)){
-				Database::disconnect();
-				header("Location: producerList.php");
+				
+				header("Location: categoryList.php");
 			}
 			else
 			{
@@ -49,7 +49,7 @@
 			<div class="row">
     			<h3>Delete a Category</h3>
     		</div>
-			<form class="form-horizontal" action="producerDelete.php" method="post">
+			<form class="form-horizontal" action="categoryDelete.php" method="post">
 			  	<input type="hidden" name="id" value="<?php echo $id;?>"/>
 			  	<p class="alert alert-error">Are you sure to delete category : <?php echo $data['name']?> ?</p>
 			  	<div class="form-actions">

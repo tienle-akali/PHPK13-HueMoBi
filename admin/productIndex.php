@@ -3,11 +3,11 @@
 <head>
 	<title>Quản lý Sản phẩm</title>
     <meta charset="utf-8">
-    <link   href="../css/bootstrap.min.css" rel="stylesheet">
-    <script src="../js/bootstrap.min.js"></script>
+    <?php include 'include/css_js_head.php'; ?>
 </head>
 
 <body>
+	<?php include 'include/header.php'; ?>
     <div class="container">
 		<div class="row">
 			<h3>Danh sách các sản phẩm</h3>

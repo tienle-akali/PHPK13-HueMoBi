@@ -1,10 +1,10 @@
-<?php
-  session_start();
-  $data=$_SESSION['login'];
-  if($data['username']==null)
-    header("Location: login.php");
-  $namePage="Home Admin::HueMobi";
- ?>
+<!-- <?php
+  // session_start();
+  // $data=$_SESSION['login'];
+  // if($data['username']==null)
+  //   header("Location: login.php");
+  // $namePage="Trang quản lý HueMobile";
+ ?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -5,12 +5,12 @@
 		$conn=Database::connect();
 		$name=$_POST['name'];
 		$typecategory=$_POST['typecategory'];
-		if (Database::selectTable($conn,"category","name",$name)!=null) {
-			echo '<script language="javascript">';
-			echo 'alert("Danh mục : '.$name.' đã tồn tại !")';
-			echo '</script>';
-		}
-		else{
+		// if (Database::selectTable($conn,"category","name",$name)!=null) {
+		// 	echo '<script language="javascript">';
+		// 	echo 'alert("Danh mục : '.$name.' đã tồn tại !")';
+		// 	echo '</script>';
+		// }
+		// else{
 			//creat new category
 			$sql="INSERT INTO `category`(`name`, `parentId`) VALUES ('$name','$typecategory')";
 			mysqli_query($conn,$sql);
@@ -18,8 +18,8 @@
 			// echo '<script language="javascript">';
 			// echo 'alert("Danh mục : '.$name.' tạo mới thành công !")';
 			// echo '</script>';
-			header("Location: categoryList.php");
-		}
+			header("Location: categoryCreate.php");
+		// }
 
 	}
 	
@@ -64,9 +64,11 @@
 									if ($result->num_rows > 0) {
 									    // output data of each row
 									    while($row = $result->fetch_assoc()) {
+									    	
 									        echo "<option value='".$row['id']."'>";
 									        echo $row['name'];
 									        echo '</option>';
+									    	
 									    }
 									} else {
 									}
@@ -84,8 +86,10 @@
 
         	</div><!--/span-->
       	</div><!--/row-->
-      <hr>
+    
+    <hr>
       <!-- /Include Footer -->
   	<?php include 'include/footer.php'; ?>
+  	</div>
 </body>
 </html>

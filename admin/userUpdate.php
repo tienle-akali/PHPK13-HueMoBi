@@ -25,7 +25,7 @@
 			echo '<script language="javascript">';
 			echo 'alert("Username đã tồn tại !")';
 			echo '</script>';
-			Database::disconnect();
+		
 		}
 		else
 		{
@@ -35,7 +35,7 @@
 			echo '<script language="javascript">';
 			echo 'alert("Nhân viên được tạo mới thành công !")';
 			echo '</script>';
-			Database::disconnect();
+		
 			header("Location: index.php");
 		}
 		
@@ -61,12 +61,12 @@
         	<div class="span10">
         	<!-- / Include Form action -->
         		<form class="form-horizontal" action="userCreate.php" method="post">
-			<legend><h3>Create a Customer</h3></legend>
+			<legend><h3>Update a Customer</h3></legend>
 				<!-- / show list role -->
 				<div class="control-group"> 
 					<label class="control-label">Chức Vụ</label>
 					<div class="control">
-					    <select name="role" required="">
+					    <select name="role" required="" style="margin-left: 20px;">
 					    	<option value="">Lựa chọn chức vụ</option>
 					    	<?php
 					    		$conn=Database::connect();

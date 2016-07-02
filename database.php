@@ -35,7 +35,7 @@ class Database
 
 		self::$conn->close();
 	}
-	public static function selectTable($conn,$nametable,$id,$dataid)//lấy dữ liệu từ $nametable có điều kiện hoặc không, nếu có điều kiện thì theo $id có dữ liệu kiểm tra là $dataid, ngược lại không có diều kiện các biến chuổi rổng "" xảy ra lổi nếu có kết quả null -> dùng để kiểm tra mã id
+	public static function selectTable($conn,$nametable,$id,$dataid)//lấy dữ liệu từ $nametable có điều kiện hoặc không, nếu có điều kiện thì theo $id có dữ liệu kiểm tra là $dataid, ngược lại không có diều kiện các biến chuỗi rổng "" xảy ra lỗi nếu có kết quả null -> dùng để kiểm tra mã id
 		{
 			if ($conn!=null&&$nametable!=null) {
 				if($id!="")

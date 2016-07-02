@@ -20,21 +20,21 @@
 			{
 				$sql="INSERT INTO `producer`( `name`, `website`, `phone`, `email`, `avatar`) VALUES ('$name','$website','$phone','$email','$avatar')";
 				mysqli_query($conn,$sql);
-				echo '<script language="javascript">';
-				echo 'alert("Hãng sản xuất: '.$name.' đã được tạo mới !")';
-				echo '</script>';
-				header("Location : producerIndex.php");
+				// echo '<script language="javascript">';
+				// echo 'alert("Hãng sản xuất: '.$name.' đã được tạo mới !")';
+				// echo '</script>';
+				header("Location: producerIndex.php");
 			}
 			else
 			{
 				echo '<script language="javascript">';
-				echo 'alert("lổi upfile !")';
+				echo 'alert("Lỗi upfile !")';
 				echo '</script>';
 			}
 			
 		}
 	}
-	Database::disconnect();
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,9 +81,9 @@
 			  </div>
 			  </div>
 			  <div style="margin-left:450px;width:160px; height:200px">
-				<div style="width:150px;height:150px; text-align:center"><img id="blah" alt="your image" width="128px" height="128px" class="img-polaroid" src="img/img.png"/></div><br>
+				<div style="width:150px;height:150px; text-align:center"><img id="blah" alt="your image" width="128px" height="128px" class="img-polaroid" src="../assets/img/logocamera.png"/></div><br>
 				<input type="file" accept="image/*" required="" name="avatar" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
-			</div>
+			  </div>
 			  <div class="form-actions">
 				  <button type="submit" class="btn btn-success" name="btn_add">Thêm mới</button>
 				  <button type="reset" class="btn btn-success" name="btn_reset">Làm mới</button>

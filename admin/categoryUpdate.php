@@ -1,4 +1,3 @@
-
 <?php
 	$id = null;
 	if ( !empty($_GET['id'])) {
@@ -9,28 +8,27 @@
 		header("Location: categoryList.php");
 	}
 	require '../database.php';
-	$conn=Data::connect();
+	$conn = Database::connect();
 	if(isset($_POST['btn_save'])){
 		$id=$_POST['id'];
-		$name=$_POST['name'];
+		$nameprod=$_POST['nameprod'];
 		$typecategory=$_POST['typecategory'];
-			$sql="UPDATE `category` SET `name` = '$name', `idCategory`='$typecategory' WHERE `id`='$id'";
+			$sql="UPDATE `category` SET `name` = '$nameprod', `parentId`='$typecategory' WHERE `id`='$id'";
 			mysqli_query($conn,$sql);
-			Data::disconnect();
 			header("Location : categoryList.php");	
 
 	}
 	else{
-		$results=Data::selectTable($conn,"category","id",$id);
+		$results=Database::selectTable($conn,"category","id",$id);
 		if($results!=null){
-			$data = mysqli_fetch_array($results);
+			$data2 = mysqli_fetch_array($results);
 		}
-		Data::disconnect();
 	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Cập nhật danh mục</title>
   <?php include 'include/css_js_head.php'; ?>
 </head>
 <body>
@@ -45,38 +43,41 @@
         	<div class="span9">
         	<!-- / Include Form action -->
         		<form class="form-horizontal" action="categoryUpdate.php" method="POST">
-        		<legend><h3>Update Category: <?php echo $data['name'] ?></h3>
-    		</div></legend>
-			<input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-			<div class="control-group">
-			    <label class="control-label">Name Category</label>
-			    <div class="controls">
-			      	<input name="name" type="text" required="" placeholder="Input Name Category" value="<?php echo $data['name']; ?>" >
-			    </div>
-			  </div>
-			  <div class="control-group">
-			    <label class="control-label">Type Category</label>
-			    <div class="controls">
-			      	<select name="typecategory" required="">
-			      		<option value="">Select Type</option>
-			      		<option value="0">Original Category </option>
-			      		<?php 
-			      			$conn = Data::connect();
-			      			$results=Data::selectTable($conn,"category","idCategory","0");
-			      			if($results!=null){
-				      			while($row = mysqli_fetch($results)) {
-				      				echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
-				      			}
-			      			}
-			      		 ?>
-			      	</select>
-			    </div>
-			  </div>
-			  <div class="form-actions">
-				  <button type="submit" class="btn btn-success" name="btn_save">Save</button>
-				  <a class="btn" href="categoryList.php">Back</a>
-				</div>
-		</form>
+	        		<legend><h3>Update Category: <?php echo $data2['name'] ?></h3></legend>
+					<input type="hidden" name="id" value="<?php echo $data2['id']; ?>">
+					<div class="control-group">
+					    <label class="control-label">Name Category</label>
+					    <div class="controls">
+					      	<input name="nameprod" type="text" required="" placeholder="Input Name Category" value="<?php echo $data2['name']; ?>" >
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label">Type Category</label>
+					    <div class="controls">
+					      	<select name="typecategory" required="">
+					      		<option value="" disabled="disabled">Chọn danh mục</option>
+					      		<option value="0">Original Category</option>
+					      		<?php 
+					      			$results=Database::selectTable($conn,"category","parentId", '0'); //sửa lỗi id ->parentId mới đúng 
+					      			if($results!=null){
+						      			while($row = $results->fetch_assoc()) {
+						      				if($row['id']==$data2['parentId'])
+						      				{
+						      				echo '<option value="'.$row['id'].'" selected="selected">'.$row['name'].'</option>';
+						      				} //lọc ra danh mục cha để hiển thị trong dropdown đầu tiên
+						      				echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+						      			}
+					      			}
+					      			Database::disconnect();
+					      		?>
+					      	</select>
+					    </div>
+					</div>
+				  	<div class="form-actions">
+					  <button type="submit" class="btn btn-success" name="btn_save">Save</button>
+					  <a class="btn" href="categoryList.php">Back</a>
+					</div>
+				</form>
 
         	</div><!--/span-->
       	</div><!--/row-->
