@@ -91,9 +91,9 @@
             </ul> <!-- end ul -->
 
             <p class="navbar-text pull-right">
-              Logged in as <a href="userRead.php" class="navbar-link" style="color:yellow;text-decoration:none;"><?php echo $data['username']; echo " (".$data['name'].")" ?></a>
+              Logged in as <a href="userRead.php" class="navbar-link" style="color:yellow;text-decoration:none;font-weight:bold;margin-left:5px;"><?php echo $data['username']." (".$data['name'].")" ?></a>
 
-              <button style="background:#EC00EC; border:1px solid #fff; margin-left:25px; border-radius:15px;padding:5px 10px;"><a href="logout.php" style="color:#fff;text-decoration:none;">Log Out</a></button>
+              <button class="btn btn-danger" style="margin-left: 40px; margin-top:0"><a href="logout.php" style="color:#fff;text-decoration:none;">Log Out</a></button>
             </p>
             
           </div><!--/.nav-collapse -->

@@ -16,15 +16,15 @@
 
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{	
-		$id = $_POST['id'];
+		// $id = $_POST['id'];
 		$nameprod = $_POST['nameprod'];
 		$prices = $_POST['prices'];
-		$idProducer = $_POST['idProducer'];
+		// $idProducer = $_POST['idProducer'];
 		$idCategory = $_POST['idCategory'];
 		$importDay = $_POST['importDay'];
 
 		
-		$sql = "UPDATE `product` SET `name`='$nameprod', `prices`='$prices', `idProducer`='$idProducer', `idCategory`='$idCategory', `importDay`='$importDay' WHERE `id`='$id'";
+		$sql = "UPDATE `product` SET `name`='$nameprod', `prices`='$prices', `idCategory`='$idCategory', `importDay`='$importDay' WHERE `id`='$id'";
 		mysqli_query($conn,$sql);
 		header("Location: productIndex.php");
 	} else {
@@ -105,17 +105,65 @@
 						<label class="control-label">Danh mục</label>
 						<div class="controls">
 							<select name="idCategory">
+								<option value="" disabled="disabled" style="color:red; font-style:oblique">Danh mục chính</option>
 							<?php
-							$sql = "SELECT * FROM category";
-							$results = mysqli_query($conn, $sql);
+								
+								$sql = "SELECT * FROM category";
 
-							if($results->num_rows > 0)
-							{
-								while ($row = $results->fetch_assoc()) {
-									echo '<option value = '.$row['id'].'>'.$row['name'].'</option>';
+								$results = mysqli_query($conn, $sql);
+								// var_dump($results); die;
+								// var_dump($data2['idCategory']); die();
+								if($results->num_rows > 0)
+								{
+									$d=0;
+									while ($row = $results->fetch_assoc()) {
+										
+										if($row['parentId']!=0&&$d<1)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Điện thoại</option>';
+										}
+										if($row['parentId']==9&&$d<2)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Laptop</option>';
+										}
+										if($row['parentId']==10&&$d<3)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tablet</option>';
+										}
+										if($row['parentId']==11&&$d<4)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Phụ kiện</option>';
+										}
+										if($row['parentId']==12&&$d<5)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Sim thẻ</option>';
+										}
+										if($row['parentId']==13&&$d<6)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tin tức</option>';
+										}
+										if($row['parentId']==14&&$d<7)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Game app</option>';
+										}
+										if($row['id']==$data2['idCategory']){
+											echo '<option value = "'.$row['id'].'" selected="selected">'.$row['name'].'</option>';
+										}
+										else{
+											echo '<option value = "'.$row['id'].'">'.$row['name'].'</option>';
+										}
+
+									}
+									
 								}
-							}
-							
+								Database::disconnect();
 							?>
 							</select>
 						</div>

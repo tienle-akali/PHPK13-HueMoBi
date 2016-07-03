@@ -86,7 +86,7 @@ if( !empty($_POST)){
 
 								if ($results->num_rows > 0) {
 									while($row = $results->fetch_assoc()) {
-										echo '<option value = '.$row['id'].'>'.$row['name'].'</option>';
+										echo '<option value = "'.$row['id'].'">'.$row['name'].'</option>';
 
 									}
 								}

@@ -13,7 +13,7 @@ if ( null==$id || !(is_numeric($id))) {
 	$sql = "SELECT * FROM product WHERE id=$id";
 	$results = mysqli_query($conn, $sql);
 	if ($results->num_rows > 0) {
-		$data = $results->fetch_array();
+		$data2 = $results->fetch_array();
 	}
 }
 ?>
@@ -24,22 +24,26 @@ if ( null==$id || !(is_numeric($id))) {
 <head>
 	<title>Xem sản phẩm</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<script src="../js/bootstrap.min.js"></script>
+	<?php include 'include/css_js_head.php'; ?>
 </head>
 <body>
-	<div class="container">
-		<div class="span10 offset1">
-			<div class="row">
-				<h3>Danh sách các sản phẩm</h3>
-			</div>
-
+	<!-- /Include Menu Head -->
+  	<?php include 'include/header.php'; ?>
+	<!-- /Include Menu Head -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+		<!-- / Include menu -->
+			<?php include'include/menu_left.php'; ?>
+			<div class="span9">
+        	<!-- / Include Form action -->
+				
 			<div class="form-horizontal">
+				<legend><h3><?php echo $data2['name'];?></h3></legend>
 				<div class="control-group">
 					<label class="control-label">Tên sản phẩm</label>
 					<div class="controls">
 						<label class="checkbox">
-							<?php echo $data['name'];?>
+							<?php echo $data2['name'];?>
 						</label>
 					</div>
 				</div>
@@ -48,44 +52,45 @@ if ( null==$id || !(is_numeric($id))) {
 					<label class="control-label">Giá</label>
 					<div class="controls">
 						<label class="checkbox">
-							<?php echo $data['prices']; ?>
+							<?php echo $data2['prices']; ?>
 						</label>
 					</div>
 				</div>
 
-				<div class="control-group">
+				<!-- <div class="control-group">
 					<label class="control-label">Nhà sản xuất</label>
 					<div class="controls">
 						<label class="checkbox">
 							<?php
+							// Database::connect();
+							// $sql = "SELECT * FROM producer";
+							// $results = mysqli_query($conn, $sql);
 							
-							$sql = "SELECT * FROM producer";
-							$results = mysqli_query($conn, $sql);
 							
-							
-							// var_dump($results); die; kiếm tra giá trị của biến
-							if($results->num_rows > 0)
-							{	
-								while($row = $results->fetch_assoc())
-								{
-									if($row['id']==$data['idProducer'])
-									{
-										echo $row['name'];	
-									}
+							// // var_dump($results); die; kiếm tra giá trị của biến
+							// if($results->num_rows > 0)
+							// {	
+							// 	while($row = $results->fetch_assoc())
+							// 	{
+							// 		if($row['id']==$data2['idProducer'])
+							// 		{
+							// 			echo $row['name'];	
+							// 		}
 								
-								}
-							}
+							// 	}
+							// }
 						
 							?>
 						</label>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="control-group">
 					<label class="control-label">Danh mục</label>
 					<div class="controls">
 						<label class="checkbox">
 							<?php
+							Database::connect();
 							$sql = "SELECT * FROM category";
 							$results = mysqli_query($conn, $sql);
 							
@@ -96,7 +101,7 @@ if ( null==$id || !(is_numeric($id))) {
 							{
 								while($row = $results->fetch_assoc())
 								{
-									if($row['id']==$data['idCategory'])
+									if($row['id']==$data2['idCategory'])
 									{
 										echo $row['name'];
 									}
@@ -114,11 +119,15 @@ if ( null==$id || !(is_numeric($id))) {
 					<label class="control-label">Ngày nhập kho</label>
 					<div class="controls">
 						<label class="checkbox">
-							<?php echo $data['importDay']; ?>
+							<?php echo $data2['importDay']; ?>
 						</label>
 					</div>
 				</div>
 
+				<div class="control-group controls"> <!-- trỏ đến trang cấu hình -->
+					<a class="btn btn-danger" href="#">Chi tiết sản phẩm</a>
+					<a class="btn btn-success" href="productUpdate.php?id='<?php echo $data2['id'];?>'">Cập nhật</a>
+				</div>
 
 				<div class="form-actions">
 					<a class="btn" href="productIndex.php">Trở lại</a>

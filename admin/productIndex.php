@@ -43,9 +43,9 @@
 					   	echo '<td>'. $row['idCategory'] . '</td>';
 					   	echo '<td>'. $row['importDay'] . '</td>';
 					   	echo '<td width=250>';
-					   	echo '<a class="btn" href="productRead.php?id='.$row['id'].'" target="blank">Xem chi tiết</a>';
+					   	echo '<a class="btn" href="productRead.php?id='.$row['id'].'">Xem chi tiết</a>';
 					   	echo '&nbsp;';
-					   	echo '<a class="btn btn-success" href="productUpdate.php?id='.$row['id'].'">Cập nhật</a>';
+					   	echo '<a class="btn btn-success" href="productUpdate.php?id='.$row['id'].'" target="_blank">Cập nhật</a>';
 					   	echo '&nbsp;';
 					   	echo '<a class="btn btn-danger" href="productDelete.php?id='.$row['id'].'">Xóa</a>';
 					   	echo '</td>';

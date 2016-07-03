@@ -65,7 +65,9 @@
 						      				{
 						      				echo '<option value="'.$row['id'].'" selected="selected">'.$row['name'].'</option>';
 						      				} //lọc ra danh mục cha để hiển thị trong dropdown đầu tiên
-						      				echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+						      				else {
+						      					echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+						      				}
 						      			}
 					      			}
 					      			Database::disconnect();
