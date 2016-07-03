@@ -20,7 +20,7 @@ if( !empty($_POST)){
 
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 	<title>Tạo mới sản phẩm</title>
 	<meta charset="utf-8">
@@ -52,32 +52,33 @@ if( !empty($_POST)){
 						</div>
 					</div>
 
-
+<!-- 
 					<div class="control-group">
 						<label class="control-label">Chọn nhà sản xuất</label>
 						<div class="controls">
 							<select name="idProducer" size = 1 >
 								<?php 
-								$conn = Database::connect();
-								$sql = "SELECT * FROM producer";
-								$results = mysqli_query($conn, $sql);
+									// $conn = Database::connect();
+									// $sql = "SELECT * FROM producer";
+									// $results = mysqli_query($conn, $sql);
 
-								if($results->num_rows > 0) {
-									while ($row = $results->fetch_assoc()) {
-										echo '<option value = '.$row['id'].'>'.$row['name'].'</option>';
-									}
-								}
+									// if($results->num_rows > 0) {
+									// 	while ($row = $results->fetch_assoc()) {
+									// 		echo '<option value = '.$row['id'].'>'.$row['name'].'</option>';
+									// 	}
+									// }
 
 								?>
 							</select>
 						</div>
-					</div>
+					</div> -->
 					
 					<div class="control-group">
 						<label class="control-label">Chọn danh mục</label>
 						<div class="controls">
 							<select name="idCategory" size = 1 >
 								<?php
+								$conn = Database::connect();
 								$sql = "SELECT * FROM category";
 								$results = mysqli_query($conn, $sql);
 								

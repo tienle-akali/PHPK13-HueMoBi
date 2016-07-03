@@ -7,7 +7,7 @@
                 </form>
                 
                 <nav>
-                    <a href="/dtdd" class="mobile actmenu"><img src="assets/img/banner/005.png" alt="Điện thoại" >Điện thoại</a>
+                    <a href="mobileIndex.php" class="mobile actmenu"><img src="assets/img/banner/005.png" alt="Điện thoại" >Điện thoại</a>
                     <a href="/may-tinh-bang" class="tablet"><img src="assets/img/banner/036.png" alt="TABLE" />Tablet</a>
                     <a href="/laptop" class="laptop"><img src="assets/img/banner/033.png" alt="laptop" /></i>Laptop</a>
                     <a href="/phu-kien" class="phukien"><img src="assets/img/banner/106.png" alt="phụ kiện"/>Phụ kiện</a>

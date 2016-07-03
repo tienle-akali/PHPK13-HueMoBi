@@ -22,7 +22,7 @@
 	                <tr>
 	                  	<th>Tên sản phẩm</th>
 	                  	<th>Giá</th>
-	                  	<th>Nhà sản xuất</th>
+	                  	<!-- <th>Nhà sản xuất</th> -->
 	                  	<th>Danh mục</th>
 	                  	<th>Ngày nhập kho</th>
 	                </tr>
@@ -39,7 +39,7 @@
 				        echo '<tr>';
 					   	echo '<td>'. $row['name'] . '</td>';
 					   	echo '<td>'. $row['prices'] . '</td>';
-					   	echo '<td>'. $row['idProducer'] . '</td>';
+					   	// echo '<td>'. $row['idProducer'] . '</td>';
 					   	echo '<td>'. $row['idCategory'] . '</td>';
 					   	echo '<td>'. $row['importDay'] . '</td>';
 					   	echo '<td width=250>';

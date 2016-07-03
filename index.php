@@ -372,8 +372,11 @@
                 phụ kiện</a>
         </div> <!-- thống kê số lượng sản phẩ từng danh mục và trỏ đến danh mục tương ứng khi click vào -->
         
-            
+         
     </section><!--section-->
+    <p id="giohang" class="none" style="display: block; position:fixed;"> <!-- giỏ hàng -->
+        <a href="#" title="Giỏ Hàng"><img src="assets/img/logogiohang.png"></a>
+    </p>
     <?php include 'header.php';?>
     <?php include 'footer.php';?> <!-- footer -->
      

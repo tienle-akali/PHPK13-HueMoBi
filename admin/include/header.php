@@ -4,7 +4,7 @@
   if($data['username']==null)
     header("Location: login.php");
   $namePage="Trang quản lý HueMobile";
- ?>
+?>
 
 <!-- <?php
  // $id = null;
@@ -57,7 +57,7 @@
                 </ul>
               </li>
 
-              <li class="dropdown"> <!-- producer -->
+             <!--  <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Producer <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
@@ -66,7 +66,7 @@
                   <li class="divider"></li>
                   <li><a href="#"><i class="i"></i> Manage Producer</a></li>
                 </ul>
-              </li>
+              </li> -->
 
               <li class="dropdown"> <!-- category -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>
@@ -91,9 +91,9 @@
             </ul> <!-- end ul -->
 
             <p class="navbar-text pull-right">
-              Logged in as <a href="userRead.php" class="navbar-link" style="color:yellow;text-decoration:none;">Username :: <?php echo $data['username']; ?></a>
+              Logged in as <a href="userRead.php" class="navbar-link" style="color:yellow;text-decoration:none;"><?php echo $data['username']; echo " (".$data['name'].")" ?></a>
 
-              <button style="background:blue;border:1px solid #fff;margin-left:25px;"><a href="logout.php" style="color:#fff;text-decoration:none;">Log Out</a></button>
+              <button style="background:#EC00EC; border:1px solid #fff; margin-left:25px; border-radius:15px;padding:5px 10px;"><a href="logout.php" style="color:#fff;text-decoration:none;">Log Out</a></button>
             </p>
             
           </div><!--/.nav-collapse -->

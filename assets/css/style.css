@@ -400,7 +400,7 @@ li.slidesjs-pagination-item a {
 	width: 120px;
 }
 
-.sanpham li .hover {
+.sanpham li .hover { /*//cấu hình thẻ figure class="hover"*/
     display: block;
     overflow: hidden;
     background: #fff;
@@ -655,10 +655,10 @@ footer {
     cursor: pointer;
     background: #FE99FF;
     width: 40px;
+    height: 40px;
     position: fixed;
     right: 20px;
     bottom: 45px;
-    height: 40px;
     text-align: center;
     line-height: 40px;
     font-size: 18px;
@@ -667,4 +667,21 @@ footer {
     content: "▲";
     opacity: .7;
     z-index: 8;
+}
+#giohang img {
+    cursor: pointer;
+    width: 60px;
+    height: 55px;
+    position: fixed;
+    right: 15px;
+    top: 60px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    -webkit-transition: all .2s linear;
+    color: #000;
+    opacity: .7;
+    z-index: 8;
+    border-radius: 30px;
+    
 }
