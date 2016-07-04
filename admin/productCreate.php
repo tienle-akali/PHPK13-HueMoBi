@@ -11,7 +11,7 @@ if( !empty($_POST)){
 
 	//insert data
 	$conn = Database::connect();
-	$sql = "INSERT INTO product (name, prices, idProducer, idCategory, importDay) values('$name', '$prices', '$idProducer', '$idCategory', '$importDay')";
+	$sql = "INSERT INTO product (name, prices, idCategory, importDay) values('$name', '$prices', '$idCategory', '$importDay')";
 	$conn->query($sql);
 	header("Location: productIndex.php");
 }
@@ -48,7 +48,7 @@ if( !empty($_POST)){
 					<div class="control-group">
 						<label class="control-label">Giá</label>
 						<div class="controls">
-							<input type="number" required="required" name="prices" placeholder="Nhập giá sản phẩm" value="<?php echo !empty($prices)?$prices:'';?>">
+							<input type="number" required="required" name="prices" placeholder="Nhập giá sản phẩm" value="<?php echo "000";//echo "!empty($prices)?$prices:''";?>"> <!-- thay bằng đuôi 000 cho tiện nhập liệu nhanh -->
 						</div>
 					</div>
 
@@ -76,7 +76,8 @@ if( !empty($_POST)){
 					<div class="control-group">
 						<label class="control-label">Chọn danh mục</label>
 						<div class="controls">
-							<select name="idCategory" size = 1 >
+							<select name="idCategory">
+								<option value="" disabled="disabled" style="color:red; font-style:oblique">Danh mục chính</option>
 								<?php
 								$conn = Database::connect();
 								$sql = "SELECT * FROM category";
@@ -85,7 +86,43 @@ if( !empty($_POST)){
 								// var_dump($results); die; kiếm tra giá trị của biến
 
 								if ($results->num_rows > 0) {
+									$d=0;
 									while($row = $results->fetch_assoc()) {
+										if($row['parentId']!=0&&$d<1)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Điện thoại</option>';
+										}
+										if($row['parentId']==9&&$d<2)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Laptop</option>';
+										}
+										if($row['parentId']==10&&$d<3)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tablet</option>';
+										}
+										if($row['parentId']==11&&$d<4)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Phụ kiện</option>';
+										}
+										if($row['parentId']==12&&$d<5)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Sim thẻ</option>';
+										}
+										if($row['parentId']==13&&$d<6)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tin tức</option>';
+										}
+										if($row['parentId']==14&&$d<7)
+										{
+											$d++;
+											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Game app</option>';
+										}
 										echo '<option value = "'.$row['id'].'">'.$row['name'].'</option>';
 
 									}
@@ -103,7 +140,9 @@ if( !empty($_POST)){
 					<div class="control-group">
 						<label class="control-label">Ngày nhập kho</label>
 						<div class="controls">
-							<input type="date" name="importDay" required="required" placeholder="Ngày nhập kho" value="<?php echo !empty($importDay)?$importDay:'';?>" min="2016-06-15" min="2016-12-31" >
+							<!-- <input type="date" name="importDay" required="required" placeholder="Ngày nhập kho" value="<?php //echo !empty($importDay)?$importDay:'';?>" min="2016-06-15" min="2016-12-31" > --> <!-- kiểu chọn ngày cách cũ -->
+							<input type="date" name="importDay" required="required" placeholder="Ngày nhập kho" value="<?php echo date("Y-m-d");?>" min="2016-06-15" min="2016-12-31" > <!-- kiểu lấy sẵn ngày tháng năm hiện tại thay vì phải click chọn -->
+							<!-- <input type="text" name="importDay" required="required" placeholder="Ngày nhập kho" value="<?php //echo date("d-m-Y h:i:s A");?>" min="2016-06-15" min="2016-12-31" > --> <!-- lấy ngày tháng +giờ hiện tại thì dùng hàm này-->
 						</div>
 					</div>
 

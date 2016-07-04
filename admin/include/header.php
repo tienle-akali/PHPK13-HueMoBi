@@ -46,14 +46,48 @@
                 </ul>
               </li>
 
+              <li class="dropdown"> <!-- category -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li class="nav-header">Action</li>
+                  <li><a href="categoryCreate.php"><i class="icon-plus"></i> Add Category</a></li>
+                  <li><a href="categoryList.php"><i class="icon-th-list"></i> List Category</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#"><i class="i"></i> Manage Category</a></li>
+                </ul>
+              </li>
+
               <li class="dropdown"> <!-- producer -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Product <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
                   <li><a href="productCreate.php"><i class="icon-plus"></i> Add Product</a></li>
                   <li><a href="productIndex.php"><i class="icon-th-list"></i> List Product</a></li>
+                  <li><a href="detailCreate.php"><i class="icon-plus"></i> Add Details Product</a></li>
+                  <li><a href="detailList.php"><i class="icon-th-list"></i> List Details Product</a></li>
+                  <!-- <li class="divider"></li>
+                  <li><a href="#"><i class="i"></i> Manage Product</a></li> -->
+                </ul>
+              </li>
+
+              <li class="dropdown"> <!-- producer -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">News <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li class="nav-header">Action</li>
+                  <li><a href="#"><i class="icon-plus"></i> Add News</a></li>
+                  <li><a href="#"><i class="icon-th-list"></i> List News</a></li>
                   <li class="divider"></li>
-                  <li><a href="#"><i class="i"></i> Manage Product</a></li>
+                  <li><a href="#"><i class="i"></i> Manage News</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown"> <!-- producer -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li class="nav-header">Action</li>
+                  <li><a href="#"><i class="icon-plus"></i> Game app</a></li>
+                  <li><a href="#"><i class="icon-plus"></i> QA </a></li>
+                  <li><a href="#"><i class="icon-plus"></i> Promotion</a></li>
                 </ul>
               </li>
 
@@ -68,23 +102,14 @@
                 </ul>
               </li> -->
 
-              <li class="dropdown"> <!-- category -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                <li class="nav-header">Action</li>
-                  <li><a href="categoryCreate.php"><i class="icon-plus"></i> Add Category</a></li>
-                  <li><a href="categoryList.php"><i class="icon-th-list"></i> List Category</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#"><i class="i"></i> Manage Category</a></li>
-                </ul>
-              </li>
+             
               <li class="dropdown"> <!-- category -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customer <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
                   <li><a href="#"><i class="icon-plus"></i> Check info</a></li>
                   <li class="divider"></li>
-                  <li><a href="#"><i class="i"></i> Manage Category</a></li>
+                  <li><a href="#"><i class="i"></i> Manage Customer</a></li>
                 </ul>
               </li>
               <li><a href="">About</a></li>

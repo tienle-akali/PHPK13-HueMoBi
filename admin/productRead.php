@@ -125,7 +125,7 @@ if ( null==$id || !(is_numeric($id))) {
 				</div>
 
 				<div class="control-group controls"> <!-- trỏ đến trang cấu hình -->
-					<a class="btn btn-danger" href="#">Chi tiết sản phẩm</a>
+					<a class="btn btn-danger" href="detailproduct.php?id='<?php echo $data2['id'];?>'">Chi tiết sản phẩm</a>
 					<a class="btn btn-success" href="productUpdate.php?id='<?php echo $data2['id'];?>'">Cập nhật</a>
 				</div>
 
