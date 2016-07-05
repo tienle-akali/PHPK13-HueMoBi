@@ -19,7 +19,7 @@
 <html lang="vi">
 <head>
 	<meta charset="utf-8">
-	<title>Tạo danh mục</title>
+	<title>Tạo mô tả sản phẩm</title>
 	<?php include 'include/css_js_head.php'; ?>
 
 </head>
