@@ -90,9 +90,9 @@ if( !empty($_POST)){
 			<div class="span9">
         	<!-- / Include Form action -->
 				<form class="form-horizontal" action="productCreateTablet.php" method="post">
-					<legend><h3>Thêm Tablet mới</h3></legend>
+					<legend><h3 style="color:red">Thêm Tablet mới</h3></legend>
 					<div class="control-group">
-						<label class="control-label">Tên sản phẩm</label>
+						<label class="control-label">Tên máy tính bảng</label>
 						<div class="controls">
 							<input name="name" required="required" type="text" placeholder="Nhập tên sản phẩm" value="<?php echo !empty($name)?$name:'';?>">
 						</div>
@@ -109,7 +109,7 @@ if( !empty($_POST)){
 						<label class="control-label">Chọn danh mục</label>
 						<div class="controls">
 							<select name="idCategory">
-								<option value="" disabled="disabled" style="color:red; font-style:oblique">Danh mục chính</option>
+								<option value="" disabled="disabled" selected="selected" style="color:red; font-style:oblique">Chọn hãng Tablet</option>
 								<?php
 								$conn = Database::connect();
 								$sql = "SELECT * FROM category";
@@ -118,45 +118,47 @@ if( !empty($_POST)){
 								// var_dump($results); die; kiếm tra giá trị của biến
 
 								if ($results->num_rows > 0) {
-									$d=0;
+									// $d=0;
 									while($row = $results->fetch_assoc()) {
-										if($row['parentId']!=0&&$d<1)
+										// if($row['parentId']!=0&&$d<1)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Điện thoại</option>';
+										// }
+										// if($row['parentId']==9&&$d<2)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Laptop</option>';
+										// }
+										// if($row['parentId']==10&&$d<3)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tablet</option>';
+										// }
+										// if($row['parentId']==11&&$d<4)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Phụ kiện</option>';
+										// }
+										// if($row['parentId']==12&&$d<5)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Sim thẻ</option>';
+										// }
+										// if($row['parentId']==13&&$d<6)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tin tức</option>';
+										// }
+										// if($row['parentId']==14&&$d<7)
+										// {
+										// 	$d++;
+										// 	echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Game app</option>';
+										// }
+										if($row['parentId']==10)
 										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Điện thoại</option>';
+											echo '<option value = "'.$row['id'].'">'.$row['name'].'</option>';
 										}
-										if($row['parentId']==9&&$d<2)
-										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Laptop</option>';
-										}
-										if($row['parentId']==10&&$d<3)
-										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tablet</option>';
-										}
-										if($row['parentId']==11&&$d<4)
-										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Phụ kiện</option>';
-										}
-										if($row['parentId']==12&&$d<5)
-										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Sim thẻ</option>';
-										}
-										if($row['parentId']==13&&$d<6)
-										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Tin tức</option>';
-										}
-										if($row['parentId']==14&&$d<7)
-										{
-											$d++;
-											echo '<option value="" disabled="disabled" style="color:red; font-style:oblique">Game app</option>';
-										}
-										echo '<option value = "'.$row['id'].'">'.$row['name'].'</option>';
-
 									}
 								}
 								
@@ -178,33 +180,76 @@ if( !empty($_POST)){
 						</div>
 					</div>
 					
-					<div class="control-group"><h2>Thông số kĩ thuật</h2></div>
+					<div class="control-group"><h3 style="color:blue">Thông số kĩ thuật</h3></div>
 
 					<div class="control-group">
-						<h3>Màn hình</h3>
+						<h4>Màn hình</h4>
 						<label class="control-label">Công nghệ màn hình</label>
 						<div class="controls">
-							<input type="text" name="scr_tech" placeholder="Công nghệ màn hình" value="<?php echo !empty($scr_tech)?$scr_tech:'';?>">
+							<select name="scr_tech">
+								<option value="TFT">TFT</option>
+								<option value="IPS LCD">IPS LCD</option>
+								<option value="Retina">Retina</option>
+								<option value="Super Amoled">Super AMOLED</option>
+							</select>
+							<!-- <input type="text" name="scr_tech" placeholder="Công nghệ màn hình" value="<?php //echo !empty($scr_tech)?$scr_tech:'';?>"> -->
 						</div>
 						<label class="control-label">Độ phân giải</label>
 						<div class="controls">
-							<input type="text" name="scr_dpi" placeholder="Độ phân giải" value="<?php echo !empty($scr_dpi)?$scr_dpi:'';?>">
+							<select name="scr_dpi">
+								<option value="qHD (960 x 540 pixels)">qHD (960 x 540 pixels)</option>
+								<option value="HD (1280 x 720 pixels)">HD (1280 x 720 pixels)</option>
+								<option value="Full HD (1920 x 1080 pixels)">Full HD (1920 x 1080 pixels)</option>
+								<option value="2K (2560 x 1440 pixels)">2K (2560 x 1440 pixels)</option>
+								<option value="4K (4096 x 2160 pixels)">4K (4096 x 2160 pixels)</option>
+								<option value="4K Ultra HD (3840 x 2160 pixels)">4K Ultra HD (3840 x 2160 pixels)</option>
+							</select>
+							<!-- <input type="text" name="scr_dpi" placeholder="Độ phân giải" value="<?php //echo !empty($scr_dpi)?$scr_dpi:'';?>"> -->
 						</div>
 						<label class="control-label">Kích thước màn hình</label>
 						<div class="controls">
-							<input type="text" name="scr_width" placeholder="Màn hình rộng" value="<?php echo !empty($scr_width)?$scr_width:'';?>">
+							<input type="text" name="scr_width" placeholder="Inch" value="<?php echo !empty($scr_width)?$scr_width:'';?>">
 						</div>
 					</div>
 
 					<div class="control-group">
-						<h3>Chụp ảnh &amp; Quay phim</h3>
+						<h4>Chụp ảnh &amp; Quay phim</h4>
 						<label class="control-label">Độ phân giải</label>
 						<div class="controls">
-							<input type="text" name="b_campixel" placeholder="Công nghệ màn hình" value="<?php echo !empty($b_campixel)?$b_campixel:'';?>">
+							<select name="b_campixel">
+								<option value="VGA">VGA</option>
+								<option value="1.3 MP">1.3 MP</option>
+								<option value="2 MP">2 MP</option>
+								<option value="3.2 MP">3.2MP</option>
+								<option value="4 MP">4 MP</option>
+								<option value="5 MP">5 MP</option>
+								<option value="6.7 MP">6.7MP</option>
+								<option value="8 MP">8 MP</option>
+								<option value="10 MP">10 MP</option>
+								<option value="12 MP">12 MP</option>
+								<option value="13 MP">13 MP</option>
+								<option value="16 MP">16 MP</option>
+								<option value="21 MP">21 MP</option>
+								<option value="41 MP">41 MP</option>
+							</select>
+							<!-- <input type="text" name="b_campixel" placeholder="Công nghệ màn hình" value="<?php //echo !empty($b_campixel)?$b_campixel:'';?>"> -->
 						</div>
 						<label class="control-label">Quay phim</label>
 						<div class="controls">
-							<input type="text" name="b_camvideo" placeholder="Độ phân giải" value="<?php echo !empty($b_camvideo)?$b_camvideo:'';?>">
+							<select name="b_camvideo">
+								<option value="Có">Có</option>
+								<option value="Không">Không</option>
+								<option value="VGA">VGA</option>
+								<option value="360p">360p</option>
+								<option value="480p">480p</option>
+								<option value="HD 720p">HD 720p</option>
+								<option value="FullHD 1080p">FullHD 1080p</option>
+								<option value="2K 1440p@30fps">2K 1440p@30fps</option>
+								<option value="2K 1440p@60fps">2K 1440p@60fps</option>
+								<option value="Quay phim 4K 2160p@30fps">Quay phim 4K 2160p@30fps</option>
+								<option value="Quay phim 4K 2160p@60fps">Quay phim 4K 2160p@60fps</option>
+							</select>
+							<!-- <input type="text" name="b_camvideo" placeholder="Độ phân giải" value="<?php //echo !empty($b_camvideo)?$b_camvideo:'';?>"> -->
 						</div>
 						<label class="control-label">Tính năng camera</label>
 						<div class="controls">
@@ -212,15 +257,43 @@ if( !empty($_POST)){
 						</div>
 						<label class="control-label">Camera trước</label>
 						<div class="controls">
-							<input type="text" name="f_campixel" placeholder="Công nghệ màn hình" value="<?php echo !empty($f_campixel)?$f_campixel:'';?>">
+							<select name="f_campixel">
+								<option value="VGA">VGA</option>
+								<option value="1.3 MP">1.3 MP</option>
+								<option value="2 MP">2 MP</option>
+								<option value="3.2 MP">3.2MP</option>
+								<option value="4 MP">4 MP</option>
+								<option value="5 MP">5 MP</option>
+								<option value="6.7 MP">6.7MP</option>
+								<option value="8 MP">8 MP</option>
+								<option value="10 MP">10 MP</option>
+								<option value="12 MP">12 MP</option>
+								<option value="13 MP">13 MP</option>
+								<option value="16 MP">16 MP</option>
+							</select>
+							<!-- <input type="text" name="f_campixel" placeholder="Công nghệ màn hình" value="<?php //echo !empty($f_campixel)?$f_campixel:'';?>"> -->
 						</div>
 					</div>
 
 					<div class="control-group">
-						<h3>Cấu hình</h3>
+						<h4>Cấu hình</h4>
 						<label class="control-label">Hệ điều hành</label>
 						<div class="controls">
-							<input type="text" name="os_ver" placeholder="Công nghệ màn hình" value="<?php echo !empty($os_ver)?$os_ver:'';?>">
+							<select name="os_ver">
+								<option value="Không">Không</option>
+								<option value="iOS 7">iOS 7</option>
+								<option value="iOS 8">iOS 8</option>
+								<option value="iOS 9">iOS 9</option>
+								<option value="Android 4.2">Android 4.2</option>
+								<option value="Android 4.3">Android 4.3</option>
+								<option value="Android 4.4">Android 4.4</option>
+								<option value="Android 5">Android 5</option>
+								<option value="Android 5.1">Android 5.1</option>
+								<option value="Android 6">Android 6</option>
+								<option value="Windows Phone 8">Windows Phone 8</option>
+								<option value="Windows 10">Windows 10</option>
+							</select>
+							<!-- <input type="text" name="os_ver" placeholder="Công nghệ màn hình" value="<?php //echo !empty($os_ver)?$os_ver:'';?>"> -->
 						</div>
 						<label class="control-label">Loại CPU (Chipset)</label>
 						<div class="controls">
@@ -228,7 +301,7 @@ if( !empty($_POST)){
 						</div>
 						<label class="control-label">Tốc độ CPU</label>
 						<div class="controls">
-							<input type="text" name="chip_clock" placeholder="Màn hình rộng" value="<?php echo !empty($chip_clock)?$chip_clock:'';?>">
+							<input type="text" name="chip_clock" placeholder="Màn hình rộng" value=" Ghz">
 						</div>
 						<label class="control-label">Chip đồ họa (GPU)</label>
 						<div class="controls">
@@ -236,122 +309,191 @@ if( !empty($_POST)){
 						</div>
 						<label class="control-label">RAM</label>
 						<div class="controls">
+							<select name="ram">
+								<option value="Không">Không</option>
+								<option value="512 MB">512 MB</option>
+								<option value="1 GB">1 GB</option>
+								<option value="1.5 GB">1.5 GB</option>
+								<option value="2 GB">2 GB</option>
+								<option value="3 GB">3 GB</option>
+								<option value="4 GB">4 GB</option>
+								<option value="6 GB">6 GB</option>
+							</select>
 							<input type="text" name="ram" placeholder="Công nghệ màn hình" value="<?php echo !empty($ram)?$ram:'';?>">
 						</div>
 						<label class="control-label">Bộ nhớ trong (ROM)</label>
 						<div class="controls">
-							<input type="text" name="rom_size" placeholder="Độ phân giải" value="<?php echo !empty($rom_size)?$rom_size:'';?>">
+							<select name="rom_size">
+								<option value="Không">Không</option>
+								<option value="512MB">512 MB</option>
+								<option value="4GB">4 GB</option>
+								<option value="8GB">8 GB</option>
+								<option value="16GB">16 GB</option>
+								<option value="32GB">32 GB</option>
+								<option value="64GB">64 GB</option>
+								<option value="128GB">128 GB</option>
+								<option value="256GB">256 GB</option>
+							</select>
+							<!-- <input type="text" name="rom_size" placeholder="Độ phân giải" value="<?php //echo !empty($rom_size)?$rom_size:'';?>"> -->
 						</div>
 						<label class="control-label">Bộ nhớ khả dụng</label>
 						<div class="controls">
-							<input type="text" name="rom_enable" placeholder="Màn hình rộng" value="<?php echo !empty($rom_enable)?$rom_enable:'';?>">
+							<input type="text" name="rom_enable" placeholder="Bộ nhớ khả dụng" value=" GB">
 						</div>
 						<label class="control-label">Thẻ nhớ ngoài</label>
 						<div class="controls">
-							<input type="text" name="sdcard" placeholder="Cảm ứng" value="<?php echo !empty($sdcard)?$sdcard:'';?>">
+							<select name="sdcard">
+								<option value="Không">Không</option>
+								<option value="SD">SD</option>
+								<option value="Micro SD">Micro SD</option>
+							</select>
+							<!-- <input type="text" name="sdcard" placeholder="Cảm ứng" value="<?php //echo !empty($sdcard)?$sdcard:'';?>"> -->
 						</div>
 						<label class="control-label">Hỗ trợ thẻ tối đa</label>
 						<div class="controls">
-							<input type="text" name="sdmax" placeholder="Cảm ứng" value="<?php echo !empty($sdmax)?$sdmax:'';?>">
+							<select name="sdmax">
+								<option value="Không">Không</option>
+								<option value="8 GB">8 GB</option>
+								<option value="16 GB">16 GB</option>
+								<option value="32 GB">32 GB</option>
+								<option value="64 GB">64 GB</option>
+								<option value="128 GB">128 GB</option>
+								<option value="200 GB">200 GB</option>
+								<option value="256 GB">256 GB</option>
+								<option value="1 TB">1 TB</option>
+							</select>
+							<!-- <input type="text" name="sdmax" placeholder="Cảm ứng" value="<?php //echo !empty($sdmax)?$sdmax:'';?>"> -->
 						</div>
 						<label class="control-label">Cảm biến</label>
 						<div class="controls">
-							<input type="text" name="sensor" placeholder="Cảm ứng" value="<?php echo !empty($sensor)?$sensor:'';?>">
+							<input type="text" name="sensor" placeholder="Cảm biến" value="Hall, Con quay hồi chuyển 3 chiều, Khí áp kế, Trọng lực, Gia tốc, Ánh sáng, Fingerprint Sensor">
 						</div>
 					</div>
 					
 					<div class="control-group">
-						<h3>Kết nối</h3>
+						<h4>Kết nối</h4>
 						<label class="control-label">Số khe sim</label>
 						<div class="controls">
-							<input type="text" name="sim_num" placeholder="Độ phân giải" value="<?php echo !empty($sim_num)?$sim_num:'';?>">
+							<select name="sim_num">
+								<option value="Không hỗ trợ">Không hỗ trợ</option>
+								<option value="1 SIM">1 SIM</option>
+								<option value="2 SIM">2 Sim</option>
+								<option value="2 SIM, SIM 2 chung khe thẻ nhớ">2 SIM, SIM 2 chung khe thẻ nhớ</option>
+							</select>
+							<!-- <input type="text" name="sim_num" placeholder="Số khe sim" value="<?php //echo !empty($sim_num)?$sim_num:'';?>"> -->
 						</div>
 						<label class="control-label">Loại Sim</label>
 						<div class="controls">
-							<input type="text" name="sim_type" placeholder="Màn hình rộng" value="<?php echo !empty($sim_type)?$sim_type:'';?>">
+							<select name="sim_type">
+								<option value="SIM thường">SIM thường</option>
+								<option value="Micro SIM">Micro SIM</option>
+								<option value="Nano SIM">Nano SIM</option>
+							</select>
+							<!-- <input type="text" name="sim_type" placeholder="Loại Sim" value="<?php //echo !empty($sim_type)?$sim_type:'';?>"> -->
 						</div>
 						<label class="control-label">Thực hiện cuộc gọi	</label>
 						<div class="controls">
-							<input type="text" name="calling" placeholder="Màn hình rộng" value="<?php echo !empty($calling)?$calling:'';?>">
+							<input type="text" name="calling" placeholder="Thực hiện cuộc gọi	" value="Có, Không">
 						</div>
 						<label class="control-label">Hỗ trợ 3G</label>
 						<div class="controls">
-							<input type="text" name="net_3g" placeholder="Công nghệ màn hình" value="<?php echo !empty($net_3g)?$net_3g:'';?>">
+							<input type="text" name="net_3g" placeholder="Hỗ trợ 3G" value="Có 3G (tốc độ Download  Mbps; Upload  Mbps)">
 						</div>
 						<label class="control-label">Hỗ trợ 4G</label>
 						<div class="controls">
-							<input type="text" name="net_4g" placeholder="Công nghệ màn hình" value="<?php echo !empty($net_4g)?$net_4g:'';?>">
+							<select name="net_4g">
+								<option value="Không">Không</option>
+								<option value="Có">Có</option>
+								<option value="4G LTE Cat 4">4G LTE Cat 4</option>
+								<option value="4G LTE Cat 6">4G LTE Cat 6</option>
+								<option value="4G LTE Cat 9">4G LTE Cat 9</option>
+							</select>
+							<!-- <input type="text" name="net_4g" placeholder="4G" value="<?php //echo !empty($net_4g)?$net_4g:'';?>"> -->
 						</div>
 						
 						<label class="control-label">Wifi</label>
 						<div class="controls">
-							<input type="text" name="wifi" placeholder="Cảm ứng" value="<?php echo !empty($wifi)?$wifi:'';?>">
+							<input type="text" name="wifi" placeholder="Wifi" value="Wi-Fi 802.11 a/b/g/n/ac, DLNA, Wi-Fi Direct, Dual-band, Wi-Fi hotspot">
 						</div>
 						<label class="control-label">Bluetooth</label>
 						<div class="controls">
-							<input type="text" name="bluetooth" placeholder="Màn hình rộng" value="<?php echo !empty($bluetooth)?$bluetooth:'';?>">
+							<input type="text" name="bluetooth" placeholder="Bluetooth" value="Có, Không, EDR, v4.2, v4.0, apt-X, A2DP, LE">
 						</div>
 						<label class="control-label">GPS</label>
 						<div class="controls">
-							<input type="text" name="gps" placeholder="Cảm ứng" value="<?php echo !empty($gps)?$gps:'';?>">
+							<input type="text" name="gps" placeholder="GPS" value="Có, Không, BDS, A-GPS, GLONASS">
 						</div>
 						<label class="control-label">Cổng kết nối/sạc</label>
 						<div class="controls">
-							<input type="text" name="port" placeholder="Cảm ứng" value="<?php echo !empty($port)?$port:'';?>">
+							<select name="port">
+								<option value="Micro USB">Micro USB</option>
+								<option value="Lightning">Lightning</option>
+								<option value="USB Type C">USB Type C</option>
+							</select>
+							<!-- <input type="text" name="port" placeholder="Cổng kết nối/sạc" value="<?php //echo !empty($port)?$port:'';?>"> -->
 						</div>
 						<label class="control-label">Jack tai nghe</label>
 						<div class="controls">
-							<input type="text" name="jack" placeholder="Cảm ứng" value="<?php echo !empty($jack)?$jack:'';?>">
+							<select name="jack">
+								<option value="Không">3.5 mm</option>
+								<option value="Có">Có</option>
+								<option value="Không">Không</option>
+							</select>
+							<<!-- input type="text" name="jack" placeholder="Jack tai nghe" value="<?php //echo !empty($jack)?$jack:'';?>"> -->
 						</div>
 						<label class="control-label">Hỗ trợ OTG</label>
 						<div class="controls">
-							<input type="text" name="otg" placeholder="Cảm ứng" value="<?php echo !empty($otg)?$otg:'';?>">
+							<input type="text" name="otg" placeholder="Hỗ trợ OTG" value="Có, Không">
 						</div>
 						<label class="control-label">Kết nối khác</label>
 						<div class="controls">
-							<input type="text" name="net_other" placeholder="Màn hình rộng" value="<?php echo !empty($net_other)?$net_other:'';?>">
+							<input type="text" name="net_other" placeholder="Kết nối khác" value="Không, NFC, OTG, MHL">
 						</div>
 					</div>
 					<div class="control-group">
-						<h3>Chức năng khác</h3>
+						<h4>Chức năng khác</h4>
 						<label class="control-label">Ghi âm</label>
 						<div class="controls">
-							<input type="text" name="record" placeholder="Công nghệ màn hình" value="<?php echo !empty($record)?$record:'';?>">
+							<input type="text" name="record" placeholder="Ghi âm" value="Có, microphone chuyên dụng chống ồn">
 						</div>
 						<label class="control-label">Radio</label>
 						<div class="controls">
-							<input type="text" name="radio" placeholder="Độ phân giải" value="<?php echo !empty($radio)?$radio:'';?>">
+							<input type="text" name="radio" placeholder="Radio" value="Có, Không">
 						</div>
 						<label class="control-label">Tính năng đặc biệt</label>
 						<div class="controls">
-							<input type="text" name="spec_feat" placeholder="Màn hình rộng" value="<?php echo !empty($spec_feat)?$spec_feat:'';?>">
+							<input type="text" name="spec_feat" placeholder="Tính năng đặc biệt" value="Không, Mở khóa bằng vân tay">
 						</div>
 					</div>
 
 					<div class="control-group">
-						<h3>Thiết kế &amp; Trọng lượng</h3>
+						<h4>Thiết kế &amp; Trọng lượng</h4>
 						<label class="control-label">Chất liệu</label>
 						<div class="controls">
-							<input type="text" name="matter" placeholder="Độ phân giải" value="<?php echo !empty($matter)?$matter:'';?>">
+							<input type="text" name="matter" placeholder="Chất liệu" value="<?php echo !empty($matter)?$matter:'';?>">
 						</div>
 						<label class="control-label">Kích thước</label>
 						<div class="controls">
-							<input type="text" name="size" placeholder="Màn hình rộng" value="<?php echo !empty($size)?$size:'';?>">
+							<input type="text" name="size" placeholder="Kích thước" value="Dài  mm - Ngang  mm - Dày  mm">
 						</div>
 						<label class="control-label">Trọng lượng</label>
 						<div class="controls">
-							<input type="text" name="weight" placeholder="Cảm ứng" value="<?php echo !empty($weight)?$weight:'';?>">
+							<input type="text" name="weight" placeholder="Trọng lượng" value=" g">
 						</div>
 					</div>
 					<div class="control-group">
-						<h3>Thông tin pin</h3>
+						<h4>Thông tin pin</h4>
 						<label class="control-label">Loại pin</label>
 						<div class="controls">
-							<input type="text" name="pin_type" placeholder="Độ phân giải" value="<?php echo !empty($pin_type)?$pin_type:'';?>">
+							<select name="pin_type">
+								<option value="Lithium - Polymer">Lithium - Polymer</option>
+								<option value="Lithium - Ion">Lithium - Ion</option>
+							</select>
+							<!-- <input type="text" name="pin_type" placeholder="Độ phân giải" value="<?php //echo !empty($pin_type)?$pin_type:'';?>"> -->
 						</div>
 						<label class="control-label">Dung lượng pin</label>
 						<div class="controls">
-							<input type="text" name="pin_size" placeholder="Công nghệ màn hình" value="<?php echo !empty($pin_size)?$pin_size:'';?>">
+							<input type="text" name="pin_size" placeholder=">Dung lượng pin" value=" mAh">
 						</div>
 					</div>
 

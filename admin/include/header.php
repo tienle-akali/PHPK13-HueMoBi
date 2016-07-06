@@ -59,16 +59,11 @@
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
                   <li><a href="productCreatePhone.php"><i class="icon-plus"></i> Thêm Điện thoại</a></li>
-                  <li><a href="productIndex.php"><i class="icon-th-list"></i> Danh sách điện thoại</a></li>
-                  <li class="divider"></li>
                   <li><a href="productCreateTablet.php"><i class="icon-plus"></i> Thêm Tablet</a></li>
-                  <li><a href="detailList.php"><i class="icon-th-list"></i> Danh sách Tablet</a></li>
-                  <li class="divider"></li>
                   <li><a href="productCreateLaptop.php"><i class="icon-plus"></i> Thêm Laptop</a></li>
-                  <li><a href="detailList.php"><i class="icon-th-list"></i> Danh sách Laptop</a></li>
-                  <li class="divider"></li>
                   <li><a href="productCreatePk.php"><i class="icon-plus"></i> Thêm Phụ kiện</a></li>
-                  <li><a href="detailList.php"><i class="icon-th-list"></i> Danh sách Phụ kiện</a></li>
+                  <li class="divider"></li>
+                  <li><a href="productIndex.php"><i class="icon-th-list"></i> Danh sách Sản phẩm</a></li>
                   <!-- <li class="divider"></li>
                   <li><a href="#"><i class="i"></i> Manage Product</a></li> -->
                 </ul>

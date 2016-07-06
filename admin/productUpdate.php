@@ -42,7 +42,7 @@
 
 
 <!DOCTYPE html>
-<html lang = "en">
+<html lang = "vi">
 <head>
 	<title>Cập nhật sản phẩm</title>
 	<meta charset = "utf-8">

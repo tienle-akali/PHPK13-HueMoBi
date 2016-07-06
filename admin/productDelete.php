@@ -1,23 +1,29 @@
 <?php
 require '../database.php';
-$id = 0;
+	$id = 0;
 
-if( !empty($_GET['id']))
-{
-	$id = $_REQUEST['id'];
-}
+	if( !empty($_GET['id']))
+	{
+		$id = $_REQUEST['id'];
+	}
 
+	$conn = Database::connect();
+	$results=Database::selectTable($conn,"product","id",$id);
+	if($results!=null)
+	{
+		$data=mysqli_fetch_array($results);
+	}
 if( !empty($_POST))
 {
 	$id = $_POST['id'];
 	//delete data
 	
-	$conn = Database::connect();
-	$sql = "DELETE * FROM product WHERE id=$id";
-	$conn->query($sql);
-
-	Database::disconnect();
-	header("Location: productIndex.php");
+	$sql = "DELETE FROM product WHERE id=$id";
+	if(mysqli_query($conn,$sql))
+	{
+		header("Location: productIndex.php");
+	}
+	
 }
 ?>
 
@@ -25,30 +31,35 @@ if( !empty($_POST))
 <html lang = "vi">
 <head>
 	<title>Xóa sản phẩm</title>
-	<meta charset = "utf-8">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<script type="text/javascript" scr="../js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+    <?php include 'include/css_js_head.php'; ?>
 </head>
 
 <body>
-	<div class="container">
-		<div class="span10 offset1">
-			<div class="row">
-				<h3>Xóa một sản phẩm</h3>				
-			</div>
+	<?php include 'include/header.php'; ?>
+    <div class="container-fluid">
+		<div class="row-fluid">
+		<!-- / Include menu -->
+			<?php include'include/menu_left.php'; ?>
 
-			<form class="form-horizontal" action="productDelete.php" method="post">
-				<input type="hidden" name="id" value="<?php echo $id;?>">
-				<p class="alert alert-error">Bạn có chắc muốn xóa sản phẩm này?</p>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-danger">Có</button>
-					<a class="btn" href="productIndex.php">Không</a>
-				</div>
-			</form>
-			
+			<div class="span9">
+			<!-- / Include Form action -->
+
+				<form class="form-horizontal" action="productDelete.php" method="post">
+					<legend><h3>Xóa sản phẩm: </h3></legend>
+					<input type="hidden" name="id" value="<?php echo $id;?>">
+					<p class="alert alert-error">Bạn có chắc muốn xóa sản phẩm này?</p>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-danger">Có</button>
+						<a class="btn" href="productIndex.php">Không</a>
+					</div>
+				</form>
+			</div>
 		</div>
 		
 	</div> <!-- container -->
-
+	<hr>
+      <!-- /Include Footer -->
+  	<?php include 'include/footer.php'; ?>
 </body>
 </html>

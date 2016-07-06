@@ -32,31 +32,33 @@
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-	<title>Delete Category</title>
+	<title>Xóa danh mục</title>
 	<meta charset="utf-8">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <script src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
-    
-	
+    <?php include 'include/css_js_head.php'; ?>
 </head>
 
 <body>
-    <div class="container">
-		<div class="span10 offset1">
-			<div class="row">
-    			<h3>Delete a Category</h3>
-    		</div>
-			<form class="form-horizontal" action="categoryDelete.php" method="post">
-			  	<input type="hidden" name="id" value="<?php echo $id;?>"/>
-			  	<p class="alert alert-error">Are you sure to delete category : <?php echo $data['name']?> ?</p>
-			  	<div class="form-actions">
-				  <button type="submit" class="btn btn-danger">Yes</button>
-				  <a class="btn" href="categoryList.php">No</a>
-				</div>
-			</form>
+    <?php include 'include/header.php'; ?>
+    <div class="container-fluid">
+		<div class="row-fluid">
+		<!-- / Include menu -->
+			<?php include'include/menu_left.php'; ?>
+
+			<div class="span9">
+			<!-- / Include Form action -->
+  
+				<form class="form-horizontal" action="categoryDelete.php" method="post">
+					<legend><h3>Xóa danh mục</h3></legend>
+				  	<input type="hidden" name="id" value="<?php echo $id;?>"/>
+				  	<p class="alert alert-error">Bạn có chắc muốn xóa danh mục này?</p>
+				  	<div class="form-actions">
+					  <button type="submit" class="btn btn-danger">Có</button>
+					  <a class="btn" href="categoryList.php">Không</a>
+					</div>
+				</form>
+			</div>
 		</div>
     </div> <!-- /container -->
   </body>
