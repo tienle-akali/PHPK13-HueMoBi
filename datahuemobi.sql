@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2016 at 03:27 AM
+-- Generation Time: Jul 07, 2016 at 02:26 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -116,6 +116,64 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `detaillaptop`
+--
+
+CREATE TABLE `detaillaptop` (
+  `id` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `cpu_prod` varchar(300) NOT NULL,
+  `cpu_tech` varchar(300) NOT NULL,
+  `cpu_type` varchar(300) NOT NULL,
+  `cpu_clock` varchar(300) NOT NULL,
+  `cpu_cache` varchar(300) NOT NULL,
+  `cpu_max` varchar(300) NOT NULL,
+  `board_chip` varchar(300) NOT NULL,
+  `board_bus` varchar(300) NOT NULL,
+  `board_ram_max` varchar(300) NOT NULL,
+  `ram_size` varchar(300) NOT NULL,
+  `ram_type` varchar(300) NOT NULL,
+  `ram_bus` varchar(300) NOT NULL,
+  `disk_type` varchar(300) NOT NULL,
+  `disk_size` varchar(300) NOT NULL,
+  `scr_width` varchar(300) NOT NULL,
+  `scr_dpi` varchar(300) NOT NULL,
+  `scr_tech` varchar(300) NOT NULL,
+  `scr_touch` varchar(300) NOT NULL,
+  `gpu_chip` varchar(300) NOT NULL,
+  `gpu_memory` varchar(300) NOT NULL,
+  `gpu_style` varchar(300) NOT NULL,
+  `sound_channel` varchar(300) NOT NULL,
+  `sound_other` varchar(300) NOT NULL,
+  `optical_disk` varchar(300) NOT NULL,
+  `optical_type` varchar(300) NOT NULL,
+  `port` varchar(300) NOT NULL,
+  `ext_feat` varchar(300) NOT NULL,
+  `lan` varchar(300) NOT NULL,
+  `wifi_stand` varchar(300) NOT NULL,
+  `wire_other` varchar(300) NOT NULL,
+  `card_read` varchar(300) NOT NULL,
+  `card_slot` varchar(300) NOT NULL,
+  `cam_pixel` varchar(300) NOT NULL,
+  `cam_info` varchar(300) NOT NULL,
+  `pin_info` varchar(300) NOT NULL,
+  `os_ver` varchar(300) NOT NULL,
+  `soft` varchar(300) NOT NULL,
+  `size` varchar(300) NOT NULL,
+  `weight` varchar(300) NOT NULL,
+  `matter` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detaillaptop`
+--
+
+INSERT INTO `detaillaptop` (`id`, `productId`, `cpu_prod`, `cpu_tech`, `cpu_type`, `cpu_clock`, `cpu_cache`, `cpu_max`, `board_chip`, `board_bus`, `board_ram_max`, `ram_size`, `ram_type`, `ram_bus`, `disk_type`, `disk_size`, `scr_width`, `scr_dpi`, `scr_tech`, `scr_touch`, `gpu_chip`, `gpu_memory`, `gpu_style`, `sound_channel`, `sound_other`, `optical_disk`, `optical_type`, `port`, `ext_feat`, `lan`, `wifi_stand`, `wire_other`, `card_read`, `card_slot`, `cam_pixel`, `cam_info`, `pin_info`, `os_ver`, `soft`, `size`, `weight`, `matter`) VALUES
+(1, 130, '412', '124', '124', ' Ghz', '124', 'Không', '14', '1333MHz', 'Không', ' GB', '', '1333MHz', 'eMMC', '128 GB', '11.6 inch', 'HD (1280 x 720 pixels)', '', '', '', 'Share (Dùng chung bộ nhớ với RAM)', 'Card đồ họa tích hợp', '2.0', 'Combo Microphone & Headphone', 'Có', 'Không', 'USB 2.0, HDMI, LAN (RJ45), USB 3.0, VGA (D-Sub)', '', '10/100/1000 Mbps Ethernet LAN (RJ-45 connector)', '802.11b/g/n/ac', 'Bluetooth', 'Có', 'Không, Micro SD, MMC, SD, SDHC, SDXC', '0.3 MP', '', '', 'Windows 10', 'Microsoft Office bản dùng thử', 'Dài  mm - Ngang  mm - Dày  mm', '', 'Vỏ nhựa / Kim loại');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `detailphone`
 --
 
@@ -130,7 +188,7 @@ CREATE TABLE `detailphone` (
   `b_campixel` varchar(300) NOT NULL,
   `b_camvideo` varchar(300) NOT NULL,
   `b_camflash` varchar(300) NOT NULL,
-  `b_camepro` varchar(300) NOT NULL,
+  `b_campro` varchar(300) NOT NULL,
   `f_campixel` varchar(300) NOT NULL,
   `f_camvideo` varchar(300) NOT NULL,
   `f_camcall` varchar(300) NOT NULL,
@@ -169,6 +227,34 @@ CREATE TABLE `detailphone` (
   `other` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `detailphone`
+--
+
+INSERT INTO `detailphone` (`id`, `productId`, `scr_tech`, `scr_dpi`, `scr_width`, `scr_touch`, `scr_glass`, `b_campixel`, `b_camvideo`, `b_camflash`, `b_campro`, `f_campixel`, `f_camvideo`, `f_camcall`, `f_camother`, `os_ver`, `chip_name`, `chip_clock`, `chip_gpu`, `ram`, `rom_size`, `rom_enable`, `sdcard`, `sdmax`, `net_2g`, `net_3g`, `net_4g`, `sim_num`, `sim_type`, `wifi`, `gps`, `bluetooth`, `nfc`, `port`, `jack`, `net_other`, `design`, `matter`, `size`, `weight`, `pin_size`, `pin_type`, `movie`, `music`, `record`, `radio`, `other`) VALUES
+(17, 127, 'TFT', '128 x 160 Pixels', '2', 'Không', 'Kính thường', 'VGA', 'Có', 'Có', 'Không', 'VGA', 'Có', 'Có', '213123', 'Không', 'qrqw', ' Ghz', 'qrw', 'Không', 'Không', ' GB', 'Không', 'Không', 'GMS 850/900/1800/1900', 'Có, Không, HSPDA 850/900/1900/2100', 'Không', '1 SIM', 'SIM thường', 'Có, Wi-Fi 802.11 a/b/g/n/ac, Dual-band, DLNA, Wi-Fi Direct, Wi-Fi hotspot', 'Có, Không, BDS, A-GPS, GLONASS', 'Có, Không, EDR, v4.2, v4.0, apt-X, A2DP, LE', 'Có', 'Micro USB', 'Không', 'Không, NFC, OTG, MHL', 'Nguyên khối, Pin rời, Pin liền', 'Nhựa', 'Dài  mm - Rộng  mm - Dày  mm', ' g', ' mAh', 'Pin chuẩn Li-Ion', 'Có', 'MP3, WAV, eAAC+, FLAC', 'Có, microphone chuyên dụng chống ồn', 'Có, Không', 'Không'),
+(18, 129, 'TFT', '128 x 160 Pixels', '213', 'Không', 'Kính thường', 'VGA', 'Có', 'Có', 'Không', 'VGA', 'Có', 'Có', '12414', 'Không', '', ' Ghz', '', 'Không', 'Không', ' GB', 'Không', 'Không', 'GMS 850/900/1800/1900', 'Có, Không, HSPDA 850/900/1900/2100', 'Không', '1 SIM', 'SIM thường', 'Có, Wi-Fi 802.11 a/b/g/n/ac, Dual-band, DLNA, Wi-Fi Direct, Wi-Fi hotspot', 'Có, Không, BDS, A-GPS, GLONASS', 'Có, Không, EDR, v4.2, v4.0, apt-X, A2DP, LE', 'Có', 'Micro USB', 'Không', 'Không, NFC, OTG, MHL', 'Nguyên khối, Pin rời, Pin liền', 'Nhựa', 'Dài  mm - Rộng  mm - Dày  mm', ' g', ' mAh', 'Pin chuẩn Li-Ion', 'Có', 'MP3, WAV, eAAC+, FLAC', 'Có, microphone chuyên dụng chống ồn', 'Có, Không', 'Không');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detailphukien`
+--
+
+CREATE TABLE `detailphukien` (
+  `id` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detailphukien`
+--
+
+INSERT INTO `detailphukien` (`id`, `productId`, `content`) VALUES
+(1, 125, '- ậkof\r\n-nàkja\r\n-kjaosfj\r\njfiash\r\nádnkasn\r\n-áda'),
+(2, 131, '224225252');
+
 -- --------------------------------------------------------
 
 --
@@ -180,7 +266,7 @@ CREATE TABLE `detailtablet` (
   `productId` int(11) NOT NULL,
   `scr_tech` varchar(300) NOT NULL,
   `scr_dpi` varchar(300) NOT NULL,
-  `scr_size` varchar(300) NOT NULL,
+  `scr_width` varchar(300) NOT NULL,
   `b_campixel` varchar(300) NOT NULL,
   `b_camvideo` varchar(300) NOT NULL,
   `b_camfeature` varchar(300) NOT NULL,
@@ -216,6 +302,14 @@ CREATE TABLE `detailtablet` (
   `pin_type` varchar(300) NOT NULL,
   `pin_size` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detailtablet`
+--
+
+INSERT INTO `detailtablet` (`id`, `productId`, `scr_tech`, `scr_dpi`, `scr_width`, `b_campixel`, `b_camvideo`, `b_camfeature`, `f_campixel`, `os_ver`, `chip_name`, `chip_clock`, `chip_gpu`, `ram`, `rom_size`, `rom_enable`, `sdcard`, `sdmax`, `sensor`, `sim_num`, `sim_type`, `calling`, `net_3g`, `net_4g`, `wifi`, `bluetooth`, `gps`, `port`, `jack`, `otg`, `net_other`, `record`, `radio`, `spec_feat`, `matter`, `size`, `weight`, `pin_type`, `pin_size`) VALUES
+(1, 128, 'TFT', 'qHD (960 x 540 pixels)', '3254', 'VGA', 'Có', '323', 'VGA', 'Không', '4214', ' Ghz', '21', 'Không', 'Không', ' GB', 'Không', 'Không', 'Hall, Con quay hồi chuyển 3 chiều, Khí áp kế, Trọng lực, Gia tốc, Ánh sáng, Fingerprint Sensor', 'Không hỗ trợ', 'SIM thường', 'Có, Không', 'Có 3G (tốc độ Download  Mbps; Upload  Mbps)', 'Không', 'Wi-Fi 802.11 a/b/g/n/ac, DLNA, Wi-Fi Direct, Dual-band, Wi-Fi hotspot', 'Có, Không, EDR, v4.2, v4.0, apt-X, A2DP, LE', 'Có, Không, BDS, A-GPS, GLONASS', 'Micro USB', 'Không', 'Có, Không', 'Không, NFC, OTG, MHL', 'Có, microphone chuyên dụng chống ồn', 'Có, Không', 'Không, Mở khóa bằng vân tay', '', 'Dài  mm - Ngang  mm - Dày  mm', ' g', 'Lithium - Polymer', ' mAh'),
+(2, 132, 'TFT', 'qHD (960 x 540 pixels)', 'ewqr', 'VGA', 'Có', 'qr', 'VGA', 'Không', '', ' Ghz', '', 'Không', 'Không', ' GB', 'Không', 'Không', 'Hall, Con quay hồi chuyển 3 chiều, Khí áp kế, Trọng lực, Gia tốc, Ánh sáng, Fingerprint Sensor', 'Không hỗ trợ', 'SIM thường', 'Có, Không', 'Có 3G (tốc độ Download  Mbps; Upload  Mbps)', 'Không', 'Wi-Fi 802.11 a/b/g/n/ac, DLNA, Wi-Fi Direct, Dual-band, Wi-Fi hotspot', 'Có, Không, EDR, v4.2, v4.0, apt-X, A2DP, LE', 'Có, Không, BDS, A-GPS, GLONASS', 'Micro USB', 'Không', 'Có, Không', 'Không, NFC, OTG, MHL', 'Có, microphone chuyên dụng chống ồn', 'Có, Không', 'Không, Mở khóa bằng vân tay', '', 'Dài  mm - Ngang  mm - Dày  mm', ' g', 'Lithium - Polymer', ' mAh');
 
 -- --------------------------------------------------------
 
@@ -265,107 +359,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `prices`, `idCategory`, `importDay`) VALUES
-(1, 'Samsung Galaxy S7 Edge', 18490000, 15, '2016-07-01'),
-(2, 'Samsung Galaxy S7', 15990000, 15, '2016-07-01'),
-(3, 'Samsung Galaxy J5', 3990000, 15, '2016-07-01'),
-(4, 'Samsung Galaxy J1 (2016)', 2590000, 15, '2016-07-01'),
-(5, 'Samsung Galaxy J1 mini', 1790000, 15, '2016-07-01'),
-(6, 'Samsung E1200', 350000, 15, '2016-07-01'),
-(7, 'Microsoft Lumia 950', 7990000, 16, '2016-07-01'),
-(8, 'Nokia Lumia 530', 890000, 16, '2016-07-01'),
-(9, 'Nokia 105', 420000, 16, '2016-07-01'),
-(10, 'iPhone 6s 128GB', 24690000, 17, '2016-07-01'),
-(11, 'iPhone 6 Plus 64GB', 20590000, 17, '2016-07-01'),
-(12, 'iPhone SE 16GB', 11490000, 17, '2016-07-01'),
-(13, 'iPhone 5S 16GB', 6990000, 17, '2016-07-01'),
-(14, 'Sony Xperia Z5', 15990000, 18, '2016-07-01'),
-(15, 'Sony Xperia M4 Dual', 6190000, 18, '2016-07-01'),
-(16, 'Sony Xperia M5', 6990000, 18, '2016-07-01'),
-(17, 'OPPO F1 Plus', 9990000, 19, '2016-07-01'),
-(18, 'OPPO F1', 5490000, 19, '2016-07-01'),
-(19, 'OPPO Neo 5 16GB', 2690000, 19, '2016-07-01'),
-(20, 'OPPO Joy Plus R1011', 1990000, 19, '2016-07-01'),
-(21, 'HTC 10', 16990000, 20, '2016-07-01'),
-(22, 'HTC One M8 Eye', 6990000, 20, '2016-07-01'),
-(23, 'HTC Desire 630', 3990000, 20, '2016-07-01'),
-(24, 'HTC Desire 620G', 2790000, 20, '2016-07-01'),
-(25, 'Asus Zenfone 2 Laser LTE', 3990000, 22, '2016-07-01'),
-(26, 'Asus Zenfone GO ZB452KG', 1990000, 22, '2016-07-01'),
-(27, 'iPad Pro Wifi Cellular 128GB', 26990000, 46, '2016-07-03'),
-(28, 'Samsung Galaxy Tab S2 8', 9990000, 47, '2016-07-03'),
-(29, 'ASUS ZenPad 7.0 (Z370CG)', 3990000, 48, '2016-07-03'),
-(30, 'Lenovo IdeaPad 100S 11IBY Z3735/2GB/32GB/Win10', 3990000, 45, '2016-07-04'),
-(31, 'HP Pavilion 11 S001TU N3050/2GB/500GB/Win10', 5990000, 44, '2016-07-04'),
-(32, 'Dell Inspiron 3552 N3050/2GB/500GB/Win10', 6690000, 41, '2016-07-04'),
-(33, 'ASUS X403SA N3700/2GB/500GB/Win10', 6990000, 43, '2016-07-04'),
-(34, 'Acer Aspire Z1402 52KX i5 5200U/4GB/500GB/Win10', 10490000, 42, '2016-07-04'),
-(35, 'Ốp lưng Galaxy J1', 50000, 57, '2016-07-04'),
-(36, 'Ốp lưng iPhone 5-5S', 50000, 57, '2016-07-04'),
-(37, 'Bao da iPad mini 4 Tucano Angolo', 450000, 57, '2016-07-04'),
-(38, 'Bao da Galaxy Tab A 8 inch nắp gập Coreka', 180000, 57, '2016-07-04'),
-(39, 'Ốp lưng MTB 7" nắp gập Ablock Đen', 220000, 57, '2016-07-04'),
-(40, 'Bao da Galaxy Tab E 9.6 inch nắp gập JM', 280000, 57, '2016-07-04'),
-(41, 'Pin sạc dự phòng eSaver 5000 mAh Y322', 200000, 58, '2016-07-04'),
-(42, 'Pin sạc dự phòng 9000 mAh Xmobile Y303', 400000, 58, '2016-07-04'),
-(43, 'Pin sạc dự phòng Polymer 10000 mAh Eco TS-D190', 550000, 58, '2016-07-04'),
-(44, 'Pin Nokia BL-4U Pisen', 150000, 58, '2016-07-04'),
-(45, 'Đế sạc Lightning iPhone-iPad ML8H2AM-A Apple', 1490000, 59, '2016-07-04'),
-(46, 'Cáp Lightning 20cm Eco AL06-200', 50000, 59, '2016-07-04'),
-(47, 'Adapter sạc Dual 2A TS-C067 X mobile', 160000, 59, '2016-07-04'),
-(48, 'Sạc xe hơi Dual USB X mobile TS-C063', 200000, 59, '2016-07-04'),
-(49, 'Adapter Sạc Iphone-Ipad-Ipod 12W MD836ZM Apple', 490000, 59, '2016-07-04'),
-(50, 'Cáp chuyển Cổng Lightning sang USB MD821AM/A', 1000000, 59, '2016-07-04'),
-(51, 'Thẻ nhớ 8Gb MicroSD Class 4', 130000, 60, '2016-07-04'),
-(52, 'Thẻ nhớ 16Gb MicroSD class 10', 190000, 60, '2016-07-04'),
-(53, 'Thẻ nhớ 32Gb MicroSD class 10', 390000, 60, '2016-07-04'),
-(54, 'Thẻ nhớ 64gb MicroSD class 10_U1', 790000, 60, '2016-07-04'),
-(55, 'Thẻ nhớ 128GB MicroSD class 10 UHS1', 1990000, 60, '2016-07-04'),
-(56, 'Tai nghe Sony Hi-Res MDR-NC750', 1990000, 61, '2016-07-04'),
-(57, 'Tai nghe bluetooth Sony MBH20 chính hãng', 649000, 61, '2016-07-04'),
-(58, 'Tai nghe chụp tai Kanen IP-950', 300000, 61, '2016-07-04'),
-(59, 'Tai nghe HPM Genius HS-02B', 110000, 61, '2016-07-04'),
-(60, 'Miếng dán Galaxy Tab 4 7 inch', 70000, 62, '2016-07-04'),
-(61, 'Miếng dán màn hình iPad Pro', 70000, 62, '2016-07-04'),
-(62, 'Miếng Dán Laptop 15 inch', 100000, 62, '2016-07-04'),
-(63, 'Miếng dán màn hình iPhone 6 - GOS', 50000, 62, '2016-07-04'),
-(64, 'Miếng dán màn hình Lumia 950XL', 50000, 62, '2016-07-04'),
-(65, 'USB 32Gb Transcend JetDrive Go 300', 990000, 63, '2016-07-04'),
-(66, 'USB 8GB 2.0 Apacer AH112', 100000, 63, '2016-07-04'),
-(67, 'USB OTG 8GB 2.0 Kingston DT DUO', 150000, 63, '2016-07-04'),
-(68, 'USB OTG 16GB 2.0 Transcend JetFlash 380', 250000, 63, '2016-07-04'),
-(69, 'Chuột không dây Logitech M238 Họa tiết hình Khỉ', 335000, 64, '2016-07-04'),
-(70, 'Chuột không dây Zadez M356', 200000, 64, '2016-07-04'),
-(71, 'Chuột có dây Genius NS-100X', 100000, 64, '2016-07-04'),
-(72, 'Loa Vi Tính Fenda U213A - 2.0', 185000, 65, '2016-07-04'),
-(73, 'Loa Bluetooth Amethyst Mark Mini', 990000, 65, '2016-07-04'),
-(74, 'Loa không dây Sony SRS-X55', 4290000, 65, '2016-07-04'),
-(75, 'Móc dán điện thoại iRing RingCK002', 40000, 66, '2016-07-04'),
-(76, 'Túi chống nước Cosano 5 inch', 50000, 66, '2016-07-04'),
-(77, 'Gậy chụp ảnh selfie Monopod Macaron M1', 70000, 66, '2016-07-04'),
-(78, 'Bộ Combo Đèn Quạt Stand Điện Thoại', 70000, 66, '2016-07-04'),
-(79, 'Sim Mobi BIG 75', 75000, 67, '2016-07-04'),
-(80, 'Sim Mobi BIG 150', 150000, 67, '2016-07-04'),
-(81, 'Sim Mobi BIG 300', 300000, 8, '2016-07-04'),
-(82, 'Vina BÙM 75', 75000, 69, '2016-07-04'),
-(83, 'Vina BÙM 150', 150000, 69, '2016-07-04'),
-(84, 'Vina BÙM 300', 300000, 69, '2016-07-04'),
-(85, 'Viettel KMC5 75', 75000, 68, '2016-07-04'),
-(86, 'Viettel KMC5 150', 150000, 68, '2016-07-04'),
-(87, 'Viettel KMC5 300', 300000, 68, '2016-07-04'),
-(88, 'Sim Viettel (Tomato)', 75000, 68, '2016-07-04'),
-(89, 'Sim Mobifone (MobiQ)', 75000, 67, '2016-07-04'),
-(90, 'Sim Vinaphone (Vinacard)', 75000, 69, '2016-07-04'),
-(91, 'TRước', 12000, 8, '2016-07-04'),
-(92, 'tét', 434000, 8, '2016-07-04'),
-(93, 'Điện thoại', 0, 8, '2016-07-04'),
-(94, 'Điện thoại', 0, 8, '2016-07-04'),
-(95, 'Điện thoại', 0, 8, '2016-07-04'),
-(96, 'Điện thoại', 0, 8, '2016-07-04'),
-(97, 'Điện thoại', 12000, 8, '2016-07-04'),
-(98, 'Laptop', 123000, 8, '2016-07-04'),
-(99, 'Laptop', 123000, 8, '2016-07-04'),
-(100, 'Laptop', 123000, 8, '2016-07-04'),
-(101, 'Laptop', 123000, 8, '2016-07-04');
+(129, 'Điện thoại', 434000, 15, '2016-07-06'),
+(130, 'Laptop', 424000, 41, '2016-07-06'),
+(131, 'Phụ kiện', 434000, 57, '2016-07-06'),
+(132, 'Tablet2', 424000, 46, '2016-07-06');
 
 -- --------------------------------------------------------
 
@@ -436,9 +433,21 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `detaillaptop`
+--
+ALTER TABLE `detaillaptop`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `detailphone`
 --
 ALTER TABLE `detailphone`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `detailphukien`
+--
+ALTER TABLE `detailphukien`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -486,15 +495,25 @@ ALTER TABLE `category`
 ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `detaillaptop`
+--
+ALTER TABLE `detaillaptop`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `detailphone`
 --
 ALTER TABLE `detailphone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `detailphukien`
+--
+ALTER TABLE `detailphukien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `detailtablet`
 --
 ALTER TABLE `detailtablet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `producer`
 --
@@ -504,7 +523,7 @@ ALTER TABLE `producer`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 --
 -- AUTO_INCREMENT for table `role`
 --

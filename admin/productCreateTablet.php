@@ -108,7 +108,7 @@ if( !empty($_POST)){
 					<div class="control-group">
 						<label class="control-label">Chọn danh mục</label>
 						<div class="controls">
-							<select name="idCategory">
+							<select name="idCategory" required="required">
 								<option value="" disabled="disabled" selected="selected" style="color:red; font-style:oblique">Chọn hãng Tablet</option>
 								<?php
 								$conn = Database::connect();
@@ -319,7 +319,7 @@ if( !empty($_POST)){
 								<option value="4 GB">4 GB</option>
 								<option value="6 GB">6 GB</option>
 							</select>
-							<input type="text" name="ram" placeholder="Công nghệ màn hình" value="<?php echo !empty($ram)?$ram:'';?>">
+							<!-- <input type="text" name="ram" placeholder="Công nghệ màn hình" value="<?php //echo !empty($ram)?$ram:'';?>"> -->
 						</div>
 						<label class="control-label">Bộ nhớ trong (ROM)</label>
 						<div class="controls">

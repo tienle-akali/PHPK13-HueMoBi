@@ -108,7 +108,7 @@ if( !empty($_POST)){
 					<div class="control-group">
 						<label class="control-label">Chọn danh mục</label>
 						<div class="controls">
-							<select name="idCategory">
+							<select name="idCategory" required="required">
 								<option value="" disabled="disabled" selected="selected" style="color:red; font-style:oblique">Chọn hãng Điện thoại</option>
 								<?php
 								$conn = Database::connect();
@@ -551,7 +551,7 @@ if( !empty($_POST)){
 						</div>
 						<label class="control-label">Loại pin</label>
 						<div class="controls">
-							<select name="jack">
+							<select name="pin_type">
 								<option value="Pin chuẩn Li-Ion">Pin chuẩn Li-Ion</option>
 								<option value="Pin chuẩn Li-Po">Pin chuẩn Li-Po</option>
 							</select>

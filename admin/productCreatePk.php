@@ -56,7 +56,7 @@ if( !empty($_POST)){
 					<div class="control-group">
 						<label class="control-label">Chọn danh mục</label>
 						<div class="controls">
-							<select name="idCategory">
+							<select name="idCategory" required="required">
 								<option value="" disabled="disabled" selected="selected" style="color:red; font-style:oblique">Chọn loại phụ kiện</option>
 								<?php
 								$conn = Database::connect();

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mobileIndex.css">
+	<link rel="stylesheet" href="assets/css/phukienIndex.css">
 	
 	<style>
 	#bannertop {

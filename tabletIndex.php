@@ -7,10 +7,12 @@
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mobileIndex.css">
+	<link rel="stylesheet" href="assets/css/tabletIndex.css">
 	
 	<style>
 	#bannertop {
       display: none;
+      
     }
     </style>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -23,9 +25,6 @@
         width: 940,
         height: 100,
         start: 1,
-
-        
-
       });
 
     });
