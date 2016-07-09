@@ -96,11 +96,12 @@ if( !empty($_POST)){
 						</div>
 					</div>
 
-					<div class="control-group"></div>
+					<div class="control-group">
 						<label class="control-label">Nội dung mô tả</label>
 						<div class="controls">
 							<textarea name="content" style="height:200px;width:600px"></textarea>
 						</div>
+					</div>
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Tạo</button>
 						<a class="btn" href="productIndex.php">Trở lại</a>

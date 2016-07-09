@@ -368,7 +368,7 @@ if( !empty($_POST)){
 						</div>
 						<label class="control-label">Tốc độ CPU</label>
 						<div class="controls">
-							<input type="text" name="chip_clock" placeholder="Ghz" value=" Ghz">
+							<input type="text" name="chip_clock" placeholder="Ghz" value="Ghz">
 						</div>
 						<label class="control-label">Chip đồ họa (GPU)</label>
 						<div class="controls">
@@ -510,7 +510,7 @@ if( !empty($_POST)){
 								<option value="Có">Có</option>
 								<option value="Không">Không</option>
 							</select>
-							<<!-- input type="text" name="jack" placeholder="Jack tai nghe" value="<?php //echo !empty($jack)?$jack:'';?>"> -->
+							<!-- <input type="text" name="jack" placeholder="Jack tai nghe" value="<?php //echo !empty($jack)?$jack:'';?>"> -->
 						</div>
 						<label class="control-label">Kết nối khác</label>
 						<div class="controls">

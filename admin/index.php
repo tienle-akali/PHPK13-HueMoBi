@@ -6,8 +6,9 @@
   // $namePage="Trang quản lý HueMobile";
  ?> -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
+  <title>Trang chủ Admin</title>
   <?php include 'include/css_js_head.php'; ?>
 </head>
 <body>

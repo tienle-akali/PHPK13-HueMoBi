@@ -81,7 +81,7 @@
               </li>
 
               <li class="dropdown"> <!-- producer -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Khác <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mục Khác <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
                   <li><a href="#"><i class="icon-plus"></i> Game app</a></li>
@@ -90,7 +90,7 @@
                 </ul>
               </li>
              
-              <li class="dropdown"> <!-- category -->
+              <!-- <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Khách hàng <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
@@ -98,8 +98,9 @@
                   <li class="divider"></li>
                   <li><a href="#"><i class="i"></i> Quản lý khách hàng</a></li>
                 </ul>
-              </li>
-            </ul> <!-- end ul -->
+              </li> -->
+            </ul> 
+            <!-- end ul -->
 
             <p class="navbar-text pull-right">
               Đăng nhập như <a href="userRead.php" class="navbar-link" style="color:yellow;text-decoration:none;font-weight:bold;margin-left:5px;"><?php echo $data['username']." (".$data['name'].")" ?></a>
