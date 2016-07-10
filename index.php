@@ -103,30 +103,56 @@
         </aside><!--tin tức-->        
            
         <ul class="sanpham">
-            <li>
+            
+                    <?php
+                    include 'database.php';
+                    $conn=Database::connect();
+                    // $sql="SELECT * FROM product ";
+                    // $que=$conn->query($sql);
+                    $results = Database::selectTable($conn,"product","","");
+                    $demm=0;
+                    if($results!=NULL)
+                        {       
+                                while($row = mysqli_fetch_assoc($results))
+                                 {
+                                    $idPro=$row['id'];
+                                 if($demm<4)
+                                    {  
+                                    echo'<li>
                 <a href="#">
-                    <img width="388px" height="180px" alt="Điện thoại di động Samsung Galaxy S7 Edge" src="https://cdn.tgdd.vn/Products/Images/42/75180/Feature/samsung-galaxy-s7-edge-600-277-3.jpg"/>
-                    <h3>Samsung Galaxy S7 Edge</h3>
-                    <strong>18.490.000₫</strong>
-                    <div class="clr"></div>
+                    <img width="388px" height="180px" alt="Điện thoại di động Samsung Galaxy S7 Edge" src="https://cdn.tgdd.vn/Products/Images/42/75180/Feature/samsung-galaxy-s7-edge-600-277-3.jpg"/>';
+                                    echo '<h3>'.$row['name'].'</h3>';
+                                    echo '<strong>'.number_format($row['prices']).'đ'.'</strong>';
+                                    echo '<div class="clr"></div>
                     <div></div>
-                    <button type="submit">Trả góp 0%</button>
+                    <button type="submit"> Trả góp 0%</button>
                     <label>Hơn 1.000 lượt mua tuần qua</label>
-                </a>
-                <figure class="hover">
-                    <h3>Samsung Galaxy S7 Edge</h3>
-                    <strong>18.490.000₫</strong>
-                    <div>
-                        
-                    </div>
-                    <span>Màn hình: Quad HD, 5.5"</span>
-                    <span>HĐH: Android 6.0</span><span>CPU: 8 nhân, RAM 4 GB</span>
-                    <span>Camera: 12.0 MP, 2 SIM</span>
-                    <span>Dung lượng pin: 3600 mAh</span>
+                </a>';
+                echo ' <figure class="hover">
+                    <h3>'.$row['name'].'</h3>
+                    <strong>'.number_format($row['prices']).'đ'.'</strong>
+                    <div>';
+                    $sql2="SELECT * FROM detailphone WHERE productId= $idPro";
+                    $results2 = mysqli_query($conn, $sql2);
+                    $row2=$results2->fetch_assoc();
+                echo    '</div>
+                    <span>Màn hình: '.$row2['os_ver'].','.$row2['scr_width'].'</span>
+                    <span>HĐH:'.$row2['os_ver'].'</span><span>CPU:'.$row2['chip_name'].', RAM '.$row2['ram'].'</span>
+                    <span>Camera: '.$row2['b_campixel'].'-'.' 2 SIM</span>
+                    <span>Dung lượng pin: '.$row2['pin_size'].'</span>
                     <label> So sánh với...</label>
                 </div>
-            </li>
-            <li>
+            </li>';}
+                                $demm++;
+                                 }
+                            
+                        }
+
+                    ?>
+                    <!-- <h3>Samsung Galaxy S7 Edge</h3>
+                    <strong>18.490.000₫</strong> -->
+                    
+            <!-- <li>
                 <a href="#">
                     <img width="388" height="180" alt="Điện thoại di động iPhone 6s 16GB" src="https://cdn1.tgdd.vn/Products/Images/42/71306/Feature/iphone-6s-16gb-600-277-5.jpg"/>
                     <h3>iPhone 6s 16GB</h3>
@@ -199,14 +225,22 @@
                     <span>Pin: 2300 mAh, 2 SIM</span>
                     <label> So sánh với...</label>
                 </figure>
-            </li>
+            </li>-->
         </ul>
         <ul class="sanpham fullwidth">
-            <li>
+            <?php
+            $demm=0;
+                    $results = Database::selectTable($conn,"product","","");
+            while($row = mysqli_fetch_assoc($results))
+                                 {
+                                    $idPro=$row['id'];
+                                 if($demm>3 &&$demm<10)
+                                    { 
+            echo '<li>
                 <a href="#">
                     <img class="lazyproduct" width="388" height="180" data-original="https://cdn3.tgdd.vn/Products/Images/42/74463/Feature/oppo-f1-600-277-4.jpg" src="https://cdn3.tgdd.vn/Products/Images/42/74463/Feature/oppo-f1-600-277-4.jpg" style="display: block;">
-                    <h3>OPPO F1</h3>
-                    <strong>5.490.000₫</strong>
+                    <h3>'.$row['name'].'</h3>
+                    <strong>'.number_format($row['prices']).'đ'.'</strong>
                     <div class="clr"></div>
                     <div></div>
                     <button type="button">Trả góp 0%</button>
@@ -214,21 +248,27 @@
                     
                 </a>
                 <figure class="hover">
-                    <h3>OPPO F1</h3>
-                    <strong>5.490.000₫</strong>
-                    <div>
-                        
-                    </div>
-                    <span>Màn hình: HD, 5.0 inches</span>
-                    <span>HĐH: Android 5.1 (Lollipop)</span>
-                    <span>CPU: 8 nhân, RAM 3GB</span>
-                    <span>Camera: 13MP, 2 SIM</span>
-                    <span>Pin: 2500mAh</span>
+                    <h3>'.$row['name'].'</h3>
+                    <strong>'.number_format($row['prices']).'đ'.'</strong>
+                    <div>';
+                    $sql2="SELECT * FROM detailphone WHERE productId= $idPro";
+                    $results2 = mysqli_query($conn, $sql2);
+                    $row2=$results2->fetch_assoc();
+                echo ' </div>
+                    <span>Màn hình:  '.$row2['os_ver'].','.$row2['scr_width'].'</span>
+                    <span>HĐH:'.$row2['os_ver'].'</span>
+                    <span>CPU: '.$row2['chip_name'].', RAM '.$row2['ram'].'</span>
+                    <span>Camera: '.$row2['b_campixel'].', 2 SIM</span>
+                    <span>Pin:'.$row2['pin_size'].'</span>
                     <label> So sánh với...</label>
                 </figure>
-            </li>
+            </li>';
+        }
+         $demm++;
+    }
+            ?>
 
-            <li>
+            <!-- <li>
                 <a href="#">
                     <img class="lazyproduct" width="388" height="180" data-original="https://cdn4.tgdd.vn/Products/Images/42/73669/Feature/oppo-neo-7-600-277.jpg" src="https://cdn4.tgdd.vn/Products/Images/42/73669/Feature/oppo-neo-7-600-277.jpg" style="display: block;">
                     <h3>OPPO Neo 7</h3>
@@ -356,7 +396,7 @@
                     <span>Dung lượng pin: 2420 mAh</span>
                     <label> So sánh với...</label>
                 </figure>
-            </li>
+            </li> -->
         </ul>
         <!-- sản phẩm -->
 

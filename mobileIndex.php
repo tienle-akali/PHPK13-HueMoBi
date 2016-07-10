@@ -184,7 +184,49 @@
         </div>	<!-- tạo banner -->
 
 		<ul id="listproduct" class="mobilecate"> <!-- danh muc mobile -->
-			<li class="feature">
+<?php
+require 'database.php';
+$conn=Database::connect();
+$sql = "SELECT * FROM product WHERE idCategory IN (SELECT id FROM category WHERE parentId=8)";
+//chọn ra id các danh mục phụ có parentId =$id, từ đó truy vấn chọn ra các sản phẩm có idCategory=id danh mục phụ đó để in ra
+$results = mysqli_query($conn, $sql);
+if($results->num_rows > 0)
+	{
+		while($row=$results->fetch_assoc())
+			{	
+				$idPro=$row['id'];
+				echo '<li>
+				<label class="tragop">Trả góp 0%</label>
+				<a href="/dtdd/iphone-6s-128gb">
+					<img src="https://cdn3.tgdd.vn/Products/Images/42/73703/iphone-6s-128gb-200x200.jpg" alt="Điện thoại di động iPhone 6s 128GB" width="120" height="120">
+					<h3>'.$row['name'].'</h3>
+					<strong>'.number_format($row['prices']).'đ'.'</strong>
+					<div class="promo">Vòng quay 100% trúng quà</div>
+					<label class="countbuy"></label>
+				</a>
+				<figure class="bginfo">
+					<h3>'.$row['name'].'</h3>
+					<strong>'.number_format($row['prices']).'đ'.'</strong>
+					<div></div>';
+					$sql2="SELECT * FROM detailphone WHERE productId= $idPro";
+					$results2 = mysqli_query($conn, $sql2);
+					$row2=$results2->fetch_assoc();
+					echo '<span>Màn hình: '.$row2['os_ver'].','.$row2['scr_width'].'</span>
+					<span>HĐH:'.$row2['os_ver'].'</span>
+					<span>CPU:'.$row2['chip_name'].', RAM '.$row2['ram'].'</span>
+					<span>Camera: '.$row2['b_campixel'].'-'.'</span>
+					<span>Pin: '.$row2['pin_size'].'</span>
+					<label class="compr">So sánh với...</label>
+					<label>
+						<button type="button">Mua ngay</button>
+					</label>
+				</figure>
+			</li>';
+			}
+	}
+		
+ ?>
+			<!-- <li class="feature">
 				<label class="tragop">Trả góp 0%</label>
 				<a href="/dtdd/iphone-6s-128gb">
 					<img src="https://cdn3.tgdd.vn/Products/Images/42/73703/iphone-6s-128gb-200x200.jpg" alt="Điện thoại di động iPhone 6s 128GB" width="120" height="120">
@@ -357,7 +399,7 @@
 						<button type="button">Mua ngay</button>
 					</label>
 				</figure>
-			</li>
+			</li> -->
 		</ul>
 	</section> <!-- section -->
 
