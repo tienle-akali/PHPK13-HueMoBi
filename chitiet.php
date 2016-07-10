@@ -108,7 +108,7 @@ include 'database.php';
         			<img alt="Samsung Galaxy S7 Edge" src="//cdn.tgdd.vn/Products/Images/42/75180/samsung-galaxy-s7-edge-1-400x460.png">
         		</aside>
         		<aside class="price_pro">
-        			<strong>'.number_format($row['prices']).'</strong>
+        			<strong>'.number_format($row['prices']).'đ'.'</strong>
         			<label class="info-promo"><b>Khuyến mãi</b></label>
                     <div class="promo">
                         <span>Dán Màn Hình Từ tính 3 lớp</span>
