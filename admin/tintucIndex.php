@@ -46,8 +46,9 @@
 					   	$results2 = mysqli_query($conn, $sql2);
 					   	$row2 = $results2->fetch_assoc();
 					   	echo '<td>'. $row2['name'] . '</td>';
-					   	echo '<td width=130px >';
-					   	echo '<a class="btn btn-small btn-success" href="tintucUpdate.php?id='.$row['id'].'"><i class="icon-edit"></i> Sửa</a>';
+					   	echo '<td width=200px >';
+					   	echo '<a class="btn btn-small" href="tintucRead.php?id='.$row['id'].'"><i class="icon-edit"></i> Xem</a>';
+					   	echo '<a class="btn btn-small btn-success" href="tintucUpdate.php?id='.$row['id'].'"style="margin-left:5px"><i class="icon-edit"></i> Sửa</a>';
 					   	echo '<a class="btn btn-small btn-danger" href="tintucDelete.php?id='.$row['id'].'" style="margin-left:5px"><i class="icon-remove-circle"></i> Xóa</a>';
 					   	echo '</td>';
 					   	echo '</tr>';

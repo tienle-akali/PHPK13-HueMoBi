@@ -63,7 +63,7 @@ $conn = Database::connect();
 		                  	<th>Giá</th>
 		                  	<th>Danh mục</th>
 		                  	<th>Ngày nhập kho</th>
-		                  	<th>Quản lý</th>
+		                  	<th>Tùy chỉnh</th>
 		                </tr>
 	              	</thead>
 	              	<?php
@@ -78,7 +78,12 @@ $conn = Database::connect();
 							   	echo '<td>'. $row['name'] . '</td>';
 							   	echo '<td>'. $row['prices'] . '</td>';
 							   	// echo '<td>'. $row['idProducer'] . '</td>';
-							   	echo '<td>'. $row['idCategory'] . '</td>';
+							   	$idCate = $row['idCategory'];
+							   	$sql2 = "SELECT name FROM category WHERE id=$idCate"; //lọc ra tên của danh mục sở hữu sản phẩm
+							   	$results2 = mysqli_query($conn, $sql2);
+							   	$row2 = $results2->fetch_assoc();
+							   	echo '<td>'. $row2['name'] . '</td>';
+							   	
 							   	echo '<td>'. $row['importDay'] . '</td>';
 							   	echo '<td width=250>';
 							   	echo '<a class="btn" href="productRead.php?id='.$row['id'].'">Xem chi tiết</a>';

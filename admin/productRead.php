@@ -977,5 +977,8 @@ if($data_cate['parentId']==11){
 		</div>
 
 	</div> <!-- container -->
+	 <hr>
+      <!-- /Include Footer -->
+  	<?php include 'include/footer.php'; ?>
 </body>
 </html>
