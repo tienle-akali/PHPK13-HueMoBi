@@ -119,7 +119,7 @@
                                  if($demm<4)
                                     {  
                                     echo'<li>
-                <a href="#">
+                <a href="chitiet.php?id='.$idPro.'">
                     <img width="388px" height="180px" alt="Điện thoại di động Samsung Galaxy S7 Edge" src="https://cdn.tgdd.vn/Products/Images/42/75180/Feature/samsung-galaxy-s7-edge-600-277-3.jpg"/>';
                                     echo '<h3>'.$row['name'].'</h3>';
                                     echo '<strong>'.number_format($row['prices']).'đ'.'</strong>';
@@ -237,7 +237,7 @@
                                  if($demm>3 &&$demm<10)
                                     { 
             echo '<li>
-                <a href="#">
+                <a href="chitiet.php?id='.$idPro.'">
                     <img class="lazyproduct" width="388" height="180" data-original="https://cdn3.tgdd.vn/Products/Images/42/74463/Feature/oppo-f1-600-277-4.jpg" src="https://cdn3.tgdd.vn/Products/Images/42/74463/Feature/oppo-f1-600-277-4.jpg" style="display: block;">
                     <h3>'.$row['name'].'</h3>
                     <strong>'.number_format($row['prices']).'đ'.'</strong>
