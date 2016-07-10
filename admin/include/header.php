@@ -90,6 +90,9 @@
                 </ul>
               </li>
              
+              <li class="dropdown">
+                <a href="../index.php" style="color:violet">Website </a>
+              </li>
               <!-- <li class="dropdown"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Khách hàng <b class="caret"></b></a>
                 <ul class="dropdown-menu">

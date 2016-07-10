@@ -16,13 +16,13 @@
         	<div class="span10">
         	<!-- / Include Form action -->
         		<table class="table table-striped table-bordered">
-        		<caption><h3>List Category</h3></caption>
+        		<caption><h3>Tổng hợp các danh mục</h3></caption>
               	<thead>
 	                <tr>
 	                	<th>ID</th>
-	                  	<th>Name</th>
-	                  	<th>In Category</th>
-	                  	<th>Action</th>
+	                  	<th>Tên</th>
+	                  	<th>Thuộc danh mục</th>
+	                  	<th>Tùy chỉnh</th>
 	                </tr>
               	</thead>
               	<tbody>
@@ -37,9 +37,9 @@
 				        echo '<td>'. $row['id'] . '</td>';
 					   	echo '<td>'. $row['name'] . '</td>';
 					   	echo '<td>'. $row['parentId'] . '</td>';
-					   	echo '<td width=100px >';
-					   	echo '<a class="btn btn-small btn-success" href="categoryUpdate.php?id='.$row['id'].'"><i class="icon-edit"></i></a>';
-					   	echo '<a class="btn btn-small btn-danger" href="categoryDelete.php?id='.$row['id'].'" style="margin-left:5px"><i class="icon-remove-circle"></i></a>';
+					   	echo '<td width=300px >';
+					   	echo '<a class="btn btn-small btn-success" href="categoryUpdate.php?id='.$row['id'].'"><i class="icon-edit"></i> Sửa</a>';
+					   	echo '<a class="btn btn-small btn-danger" href="categoryDelete.php?id='.$row['id'].'" style="margin-left:5px"><i class="icon-remove-circle"></i> Xóa</a>';
 					   	echo '</td>';
 					   	echo '</tr>';
 				    }
@@ -53,6 +53,12 @@
 
         	</div><!--/span-->
       	</div><!--/row-->
+
+      	<p class="btn btn-success" style="display:block;position:fixed;top:80px;right:20px"> <!-- giỏ hàng -->
+        	<a href="categoryCreate.php" style="color:#fff"><i class="icon-plus"></i> Thêm</a>
+    	</p>
+
+      </div><!-- container -->
       <hr>
       <!-- /Include Footer -->
   	<?php include 'include/footer.php'; ?>

@@ -43,19 +43,19 @@
         	<div class="span9">
         	<!-- / Include Form action -->
         		<form class="form-horizontal" action="categoryCreate.php" method="POST">
-        			<legend><h3>Create New Category</h3></legend>
+        			<legend><h3>Tạo danh mục mới</h3></legend>
 					<div class="control-group">
-					    <label class="control-label">Name Category</label>
+					    <label class="control-label">Tên Danh mục</label>
 					    <div class="controls">
 					      	<input name="name" type="text" required="rterterter" placeholder="Input Name Category" value="<?php echo !empty($name)?$name:'';?>">
 					    </div>
 					</div>
 					<div class="control-group">
-						<label class="control-label">Type Category</label>
+						<label class="control-label">Kiểu danh mục</label>
 						<div class="controls">
 						  	<select name="typecategory" required="">
 						  		<option value="" disabled="disabled" selected="selected">Chọn danh mục</option>
-						  		<option value="0">Original Category </option> <!-- thư mục gốc có idParent=0 -->
+						  		<option value="0">Danh mục gốc</option> <!-- thư mục gốc có idParent=0 -->
 						  		<?php
 						    		$conn=Database::connect();
 						    		$sql = "SELECT * FROM category";
@@ -78,8 +78,8 @@
 						</div>
 					</div>
 					<div class="form-actions">
-						<button type="submit" class="btn btn-success" name="btn_add">Create</button>
-						<a class="btn" href="categoryList.php">Back</a>
+						<button type="submit" class="btn btn-success" name="btn_add">Tạo</button>
+						<a class="btn" href="categoryList.php">Trở lại</a>
 					</div>
 				
 				</form>

@@ -43,22 +43,22 @@
         	<div class="span9">
         	<!-- / Include Form action -->
         		<form class="form-horizontal" action="categoryUpdate.php" method="POST">
-	        		<legend><h3>Update Category: <?php echo $data2['name'] ?></h3></legend>
+	        		<legend><h3>Cập nhật danh mục: <?php echo $data2['name'] ?></h3></legend>
 					<input type="hidden" name="id" value="<?php echo $data2['id']; ?>">
 					<div class="control-group">
-					    <label class="control-label">Name Category</label>
+					    <label class="control-label">Tên Danh mục</label>
 					    <div class="controls">
 					      	<input name="nameprod" type="text" required="" placeholder="Input Name Category" value="<?php echo $data2['name']; ?>" >
 					    </div>
 					</div>
 					<div class="control-group">
-					    <label class="control-label">Type Category</label>
+					    <label class="control-label">Kiểu danh mục</label>
 					    <div class="controls">
 					      	<select name="typecategory" required="">
 					      		<option value="" disabled="disabled">Chọn danh mục</option>
-					      		<option value="0">Original Category</option>
+					      		<option value="0">Danh mục gốc</option>
 					      		<?php 
-					      			$results=Database::selectTable($conn,"category","parentId", '0'); //sửa lỗi id ->parentId mới đúng 
+					      			$results=Database::selectTable($conn,"category","parentId", '0'); //chọn ra các danh mục gốc có parentId=0
 					      			if($results!=null){
 						      			while($row = $results->fetch_assoc()) {
 						      				if($row['id']==$data2['parentId'])
@@ -76,8 +76,8 @@
 					    </div>
 					</div>
 				  	<div class="form-actions">
-					  <button type="submit" class="btn btn-success" name="btn_save">Save</button>
-					  <a class="btn" href="categoryList.php">Back</a>
+					  <button type="submit" class="btn btn-success" name="btn_save">Cập nhật</button>
+					  <a class="btn" href="categoryList.php">Trở lại</a>
 					</div>
 				</form>
 
