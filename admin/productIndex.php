@@ -59,8 +59,9 @@ $conn = Database::connect();
 					</form>
 	              	<thead>
 		                <tr>
+		                	<th>STT</th>
 		                  	<th>Tên sản phẩm</th>
-		                  	<th>Giá</th>
+		                  	<th>Giá (đồng)</th>
 		                  	<th>Danh mục</th>
 		                  	<th>Ngày nhập kho</th>
 		                  	<th>Tùy chỉnh</th>
@@ -73,10 +74,13 @@ $conn = Database::connect();
 						
 						if ($results->num_rows > 0) {
 						    // output data of each row
+						    $dem = 0;
 						    while($row = $results->fetch_assoc()) {
+						    	$dem++;
 						        echo '<tr>';
+						        echo '<td>'. $dem . '</td>';
 							   	echo '<td>'. $row['name'] . '</td>';
-							   	echo '<td>'. $row['prices'] . '</td>';
+							   	echo '<td>'. number_format($row['prices']) . '</td>';
 							   	// echo '<td>'. $row['idProducer'] . '</td>';
 							   	$idCate = $row['idCategory'];
 							   	$sql2 = "SELECT name FROM category WHERE id=$idCate"; //lọc ra tên của danh mục sở hữu sản phẩm
@@ -85,8 +89,8 @@ $conn = Database::connect();
 							   	echo '<td>'. $row2['name'] . '</td>';
 							   	
 							   	echo '<td>'. $row['importDay'] . '</td>';
-							   	echo '<td width=250>';
-							   	echo '<a class="btn" href="productRead.php?id='.$row['id'].'">Xem chi tiết</a>';
+							   	echo '<td width=200>';
+							   	echo '<a class="btn" href="productRead.php?id='.$row['id'].'">Xem</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="productUpdate.php?id='.$row['id'].'" target="_blank">Cập nhật</a>';
 							   	echo '&nbsp;';
