@@ -197,7 +197,7 @@ if($results->num_rows > 0)
 				$idPro=$row['id'];
 				echo '<li>
 				<label class="tragop">Trả góp 0%</label>
-				<a href="/dtdd/iphone-6s-128gb">
+				<a href="chitiet.php?id='.$idPro.'">
 					<img src="https://cdn3.tgdd.vn/Products/Images/42/73703/iphone-6s-128gb-200x200.jpg" alt="Điện thoại di động iPhone 6s 128GB" width="120" height="120">
 					<h3>'.$row['name'].'</h3>
 					<strong>'.number_format($row['prices']).'đ'.'</strong>
