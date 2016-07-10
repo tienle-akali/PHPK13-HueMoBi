@@ -26,7 +26,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 	<title>Cập nhật danh mục</title>
   <?php include 'include/css_js_head.php'; ?>

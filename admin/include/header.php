@@ -73,8 +73,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tin tức <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li class="nav-header">Action</li>
-                  <li><a href="#"><i class="icon-plus"></i> Thêm tin tức</a></li>
-                  <li><a href="#"><i class="icon-th-list"></i> Danh sách tin tức</a></li>
+                  <li><a href="tintucCreate.php"><i class="icon-plus"></i> Thêm tin tức</a></li>
+                  <li><a href="tintucIndex.php"><i class="icon-th-list"></i> Danh sách tin tức</a></li>
                   <li class="divider"></li>
                   <li><a href="#"><i class="i"></i> Quản lý tin tức</a></li>
                 </ul>
