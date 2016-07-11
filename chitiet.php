@@ -13,13 +13,13 @@ include 'database.php';
 <head>
 	<meta charset="utf-8">
     <?php include 'admin/include/css_js_head.php'; ?>
-	<!-- <?php //echo '<title>'.$row['name'].'</title>';?> -->
+	<!-- <?php //echo '<title>'.$row['name'].'</title>';?> -->  <link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link rel="shortcut icon" href="assets/ico/logohuemobi16x16.png">
  	<link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobileIndex.css">
  	<link rel="stylesheet" href="assets/css/chitiet.css">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+  
     
    <!--  <style>
         .control-group{
@@ -103,9 +103,13 @@ include 'database.php';
                                 while($row = mysqli_fetch_assoc($results))
                                  {
                                     $idPro=$row['id'];
+
+                $sql_img = "SELECT `image` FROM `hinhanh` WHERE `productId`=$idPro";
+                $result_img = mysqli_query($conn, $sql_img);
+                $img=$result_img->fetch_assoc();
      echo '<div class="chitiet">
         		<aside class="picture">
-        			<img alt="Samsung Galaxy S7 Edge" src="//cdn.tgdd.vn/Products/Images/42/75180/samsung-galaxy-s7-edge-1-400x460.png">
+        			<img style="width:400px; height:400px" alt="'.$row['name'].'" src="'.$img['image'].'.jpg'.'">
         		</aside>
         		<aside class="price_pro">
         			<strong>'.number_format($row['prices']).'đ'.'</strong>
@@ -198,7 +202,9 @@ include 'database.php';
     }
     if($data_cate['parentId']==8){ //phone
 
-                    echo '<div class="control-group"><h3 style="color:blue">Thông số kĩ thuật</h3></div><div class="control-group">
+                    echo '<div class="control-group"></div>
+                    <div class="control-group"><h3 style="color:blue">Thông số kỹ thuật</h3></div>
+                    <div class="control-group">
                         <h4>Màn hình</h4>
                         <label class="control-label">Công nghệ màn hình</label>
                         <div class="controls">
@@ -1162,7 +1168,7 @@ include 'database.php';
             </ul>
     	</div> -->
         <div >
-            <input type="text" style="overflow-y: visible;overflow:hidden;width: 50%;background: #fff;min-height: 100px;border: 1px solid #dadada;border-radius: 4px;padding: 10px 1.5%;font-size: 14px;color: #333;outline: none;"/>       
+            <input type="text" style="overflow-y: visible;overflow:hidden;width: 50%;background: #fff;min-height: 100px;border: 1px solid #dadada;border-radius: 4px;padding: 10px 1.5%;font-size: 14px;color: #333;outline: none;" placeholder="Nhập bình luận" />       
         <a class="btn btn-danger">Gửi</a>
         </div>
 </section><!--content-->

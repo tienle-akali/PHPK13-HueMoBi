@@ -16,7 +16,7 @@
 		}
 		else
 		{
-			if(move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar))
+			if(move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar)) 
 			{
 				$sql="INSERT INTO `producer`( `name`, `website`, `phone`, `email`, `avatar`) VALUES ('$name','$website','$phone','$email','$avatar')";
 				mysqli_query($conn,$sql);

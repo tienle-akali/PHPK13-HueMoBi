@@ -15,6 +15,15 @@ if ( null==$id || !(is_numeric($id))) {
 	if ($results->num_rows > 0) {
 		$data2 = $results->fetch_array();
 	}
+	
+	//hình ảnh
+
+	$result_img = Database::selectTable($conn,"hinhanh","productId",$id);
+	$img = mysqli_fetch_assoc($result_img);
+
+
+	//================
+
 
 	$idCateProd = $data2['idCategory'];//chon ra idCategory cua san pham de truy van den id cua danh muc
 	$sql_cate = "SELECT parentId FROM category WHERE id=$idCateProd";
@@ -122,7 +131,15 @@ if ( null==$id || !(is_numeric($id))) {
 					</div>
 				</div>
 				
-					
+				<!-- thêm hình ảnh -->
+					<div class="control-group">
+						<label class="control-label">Avatar</label>
+						<div style="width:160px; height:160px; text-align:center"><img src="<?php echo $img['avatar'];?>'" width="50px" height="50px"></div>
+				  	</div>
+				  	<div class="control-group">
+						<label class="control-label">Hình ảnh</label>
+						<div style="width:160px; height:160px; text-align:center"><img src="<?php echo $img['img'];?>" width="50px" height="50px"></div>
+				  	</div>
 					
 					
 <?php				

@@ -10,9 +10,22 @@ if( !empty($_POST)){
 	$sql = "INSERT INTO product (name, prices, idCategory, importDay) values('$name', '$prices', '$idCategory', '$importDay')";
 	$conn->query($sql);
 	$idprod = $conn->insert_id;
+	$productId = $idprod;
+
+	//hình ảnh
+	
+	$avatar='../upload/product/'.basename($_FILES['avatar']['name']);
+	$image='../upload/product/'.basename($_FILES['image']['name']);
+
+	move_uploaded_file($_FILES['avatar']['tmp_name'],$avatar);
+	move_uploaded_file($_FILES['image']['tmp_name'],$image);//tmp_name là tên tạm thời của file trên server, khi thêm được vào thì nó sẽ mất đi
+			
+	$sql_img="INSERT INTO `hinhanh`( `avatar`, `image`, `productId`) VALUES ('$avatar', '$image', '$productId')";
+	mysqli_query($conn,$sql_img);
+	
 
 	// thông số kĩ thuật
-	$productId = $idprod;
+	
 
 	$scr_tech = $_POST['scr_tech'];
 	$scr_dpi = $_POST['scr_dpi'];
@@ -181,7 +194,23 @@ if( !empty($_POST)){
 							<!-- <input type="text" name="importDay" required="required" placeholder="Ngày nhập kho" value="<?php //echo date("d-m-Y h:i:s A");?>" min="2016-06-15" min="2016-12-31" > --> <!-- lấy ngày tháng +giờ hiện tại thì dùng hàm này-->
 						</div>
 					</div>
-					
+					<!-- thêm hình ảnh -->
+					<div class="control-group">
+						<label class="control-label">Avatar</label>
+						<div style="margin-left:250px;width:160px; height:200px">
+							<div style="width:150px;height:150px; text-align:center"><img id="blah" alt="your image" width="128px" height="128px" class="img-polaroid" src="../assets/img/logocamera.png"/></div><br>
+							<input type="file" accept="image/*" required="" name="avatar" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+						</div>
+				  	</div>
+				  	<div class="control-group">
+						<label class="control-label">Hình ảnh</label>
+						<div style="margin-left:250px;width:160px; height:200px">
+							<div style="width:150px;height:150px; text-align:center"><img id="blah2" alt="your image" width="128px" height="128px" class="img-polaroid" src="../assets/img/logocamera.png"/></div><br>
+							<input type="file" accept="image/*" required="" name="image" onchange="document.getElementById('blah2').src = window.URL.createObjectURL(this.files[0])">
+						</div>
+				  	</div>
+
+
 					<div class="control-group"><h3 style="color:blue">Thông số kĩ thuật</h3></div>
 
 					<div class="control-group">

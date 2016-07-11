@@ -1,36 +1,42 @@
 
 /*===================header=========================*/
-.content {
-    display: block;
-    width: 90%;
-    margin-top: 10px;
-}
-.content img {
+section{
     
+ 
+    min-width: 980px;
+    clear: both;
+    text-align: center;
+}
+section form {
+    margin: 20px 215px;
+    background: #fff;
+    padding: 20px;
+}
+input {
+    width: 350px;
+}
+.btn {
+    padding: 10px;
+}
+.bannerkm img{
     margin-top: 100px;
-    margin-left:215px;
 }
-.content .comment .submitcomment{
-    display: inline-block;
-    width: 75%;
-    background-color: white !important;
-    margin-left:220px;
-    line-height: 30px;
-    margin-bottom: 10px;
+
+.comment {
+    background: #fff;
 }
-.content .comment .submitcomment .binhluan{
-    background-color: red;
-    width: 10%;
-    height: 20%;
-    display: block;
-    text-align:center;
+.comment input{
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
 }
-.content .comment .printcomment{
-    display: inline-block;
-    width: 75%;
-    background-color: white !important;
-    margin-left:220px;
-    line-height: 30px;
+h3.binhluan {
+    padding: 0;
+    margin: 0;
+    /*background: violet;*/
+    color: #000;
 }
+
+
+
 /*=======================================================CSS conten=======================================================================*/
 

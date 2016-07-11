@@ -39,8 +39,9 @@ if (!empty($_POST)) {
 Database::disconnect();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
+  <title>Trang Đăng nhập</title>
   <?php include'include/css_js_head.php'; ?>
     <style type="text/css">
       body {
@@ -82,13 +83,13 @@ Database::disconnect();
     <div class="container">
 
       <form class="form-signin" method="POST" action="login.php">
-        <legend style="text-align:center"><h2 class="form-signin-heading"><img src="../assets/img/login.png"></i> Login</h2></legend>
-        <label><b><i class="icon-user"></i> Username</b></label>
-        <input type="text" class="input-block-level" placeholder="Enter Username" name="username" value="<?php echo !empty($username)?$username:''; ?>" required="">
-        <label><b><i class="icon-eye-open"></i> Password</b></label>
-        <input type="password" class="input-block-level" placeholder="Enter Password" name="password" value="<?php echo !empty($password)?$password:''; ?>" required="">
+        <legend style="text-align:center"><h2 class="form-signin-heading"><img src="../assets/img/login.png"></i> ĐĂNG NHẬP</h2></legend>
+        <label><b><i class="icon-user"></i> Tài khoản</b></label>
+        <input type="text" class="input-block-level" placeholder="Nhập tên tài khoản" name="username" value="<?php echo !empty($username)?$username:''; ?>" required="">
+        <label><b><i class="icon-eye-open"></i> Mật khẩu</b></label>
+        <input type="password" class="input-block-level" placeholder="Nhập mật khẩu" name="password" value="<?php echo !empty($password)?$password:''; ?>" required="">
         <hr>
-        <button type="submit" class="btn btn-success btn-block"><i class="icon-off"></i> Login</button>
+        <button type="submit" class="btn btn-success btn-block"><i class="icon-off"></i> Đăng nhập</button>
       </form>
 
     </div> <!-- /container -->

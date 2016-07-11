@@ -26,6 +26,32 @@
 		$sql = "UPDATE `product` SET `name`='$nameprod', `prices`='$prices', `idCategory`='$idCategory', `importDay`='$importDay' WHERE `id`='$id'";
 		$kq = mysqli_query($conn,$sql);
 		// $idprod = $kq->insert_id;
+		
+		//hình ảnh
+
+		//     INSERT INTO `hinhanh`(`avatar`, `image`, `productId`) VALUES ('upload/product/', 'upload/product/', ) 
+		$changer=$_POST['changer'];
+		$logo=$_POST['logo'];
+			if($changer==1){
+				if($FILES['avatar']['tmp_name']!=null&&$FILES['image']['tmp_name']!=null){
+					if(unlink($logo)){
+						$url = '../upload/product/';
+						$avatar=$url.$_FILES['avatar']['name']; 
+						$image=$url.$_FILES['image']['name'];
+						move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar);
+						move_uploaded_file($_FILES['image']['tmp_name'], $image);
+							$sql_img="UPDATE `hinhanh` SET `avatar`='$avatar',`image`='$image' WHERE `productId`='$id'";
+						}
+					}
+				}
+				else{
+					echo '<script language="javascript">';
+					echo 'alert("No File Avatar !")';
+					echo '</script>';
+				}
+			
+			mysqli_query($conn,$sql_img);
+
 
 		$sql2 = "SELECT * FROM product WHERE id=$id";
 		$results = mysqli_query($conn, $sql2);
@@ -368,6 +394,66 @@
 							<input type="date" name="importDay" placeholder="Nhập ngày tháng năm" value="<?php echo $data2['importDay'];?>">
 						</div>
 					</div>
+
+
+					<!-- thêm hình ảnh -->
+
+					<div style="margin-left:450px;width:160px; height:200px">
+						<div style="width:150px;height:150px; text-align:center"><img id="blah" alt="your image" width="128px" height="128px" class="img-polaroid" src="<?php echo $data['avatar'];?>"/></div>
+						<div>
+						<script>
+							$(document).ready(function(){
+							    $("#hide").click(function(){
+							        $("#upfile").hide();
+							    });
+							    $("#show").click(function(){
+							        $("#upfile").show();
+							    });
+							});
+						</script>
+							Changer Logo Producer: 
+							<input type="radio" id="show" name="changer" value="1" checked> Yes
+							<input type="radio" id="hide" name="changer" value="0" > No
+		  					<br>
+		  					<input type="file" id="upfile" accept="image/*" name="avatar" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+						</div>
+					</div>
+					<div style="margin-left:450px;width:160px; height:200px">
+						<div style="width:150px;height:150px; text-align:center"><img id="blah" alt="your image" width="128px" height="128px" class="img-polaroid" src="<?php echo $data['image'];?>"/></div>
+						<div>
+						<script>
+							$(document).ready(function(){
+							    $("#hide").click(function(){
+							        $("#upfile").hide();
+							    });
+							    $("#show").click(function(){
+							        $("#upfile").show();
+							    });
+							});
+						</script>
+							Changer Logo Producer: 
+							<input type="radio" id="show" name="changer" value="1" checked> Yes
+							<input type="radio" id="hide" name="changer" value="0" > No
+		  					<br>
+		  					<input type="file" id="upfile" accept="image/*" name="avatar" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+						</div>
+					</div>
+
+					<!-- <div class="control-group">
+						<label class="control-label">Avatar</label>
+						<div style="margin-left:250px;width:160px; height:200px">
+							<div style="width:150px;height:150px; text-align:center"><img id="blah" alt="your image" width="128px" height="128px" class="img-polaroid" src="../assets/img/logocamera.png"/></div><br>
+							<input type="file" accept="image/*" required="" name="avatar" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+						</div>
+				  	</div>
+				  	<div class="control-group">
+						<label class="control-label">Hình ảnh</label>
+						<div style="margin-left:250px;width:160px; height:200px">
+							<div style="width:150px;height:150px; text-align:center"><img id="blah2" alt="your image" width="128px" height="128px" class="img-polaroid" src="../assets/img/logocamera.png"/></div><br>
+							<input type="file" accept="image/*" required="" name="image" onchange="document.getElementById('blah2').src = window.URL.createObjectURL(this.files[0])">
+						</div>
+				  	</div> -->
+
 
 
 <?php
@@ -1513,7 +1599,7 @@ if($data_cate['parentId']==11){ //phu kien
 ?>
 
 					<div class="form-actions">
-						<button type="submit" class="btn btn-success">Cập nhật</button>
+						<button type="submit" class="btn btn-success" name="btn_update">Cập nhật</button>
 						<a class="btn btn-danger" href="productRead.php?id=<?php echo $data2['id']?>">Hủy bỏ</a>
 						<a class="btn" href="productIndex.php">Trở lại</a>
 					</div>

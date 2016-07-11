@@ -10,40 +10,39 @@
 </head>
 
 <body>
-    <div id="container">
+   
     
-        <div id="header">
             <?php include 'header.php';?>
-        </div>
+      
         <!--....................................header.........................................................-->
+    <section>
         
-        <div class="content">
-            <img src="assets/img/banner/khuyenmai.png" alt="khuyến mãi"/>
-            <div class="comment">
-                <div class="submitcomment">
+            <div class="bannerkm"><img src="assets/img/banner/khuyenmai.png" alt="khuyến mãi"/></div>
+            
+                
                     <form action="#" method="post" name="comment"> 
-                    <span class="binhluan">Bình luận</span><br/>
-                    <span>Tên của bạn</span><br/>
-                    <input type="text" name="yourname" placeholder="hãy nhập tên của bạn" /><br>
-                    <span>Địa chỉ email:</span><br/>
-                    <input type="text" name="email" placeholder="nhập địa chỉ email"/><br/>
-                    <span>Bình luận:</span><br/>
-                    <textarea name="comment" id="comment" cols="50" rows="2" tabindex="4" placeholder="Viết bình luận vào đây"></textarea><br/>
-                    <input type="submit" name="submit" value="Gửi"/>
+                        <h3 class="binhluan">Bình luận</h3><br/>
+                        <label>Tên của bạn:</label>
+                        <input type="text" name="yourname" placeholder="hãy nhập tên của bạn" /><br><br>
+                        <label>Địa chỉ email:</label>
+                        <input type="text" name="email" placeholder="nhập địa chỉ email"/><br><br>
+                        <label>Bình luận:</label>
+                        <input type="text" name="comment" style="height:100px" placeholder="Viết bình luận vào đây"></textarea><br><br>
+                        <button class="btn" type="submit" name="submit" >Gửi nhận xét</button>
                     </form>
-                </div>
-                <div class="printcomment">
+               
+                <!-- <div class="printcomment">
                     <p>Họ và tên</p>
                     <p>bình luận</p>
-                </div>
-            </div><!--bình luận-->
-        </div><!--content-->
+                </div> -->
+            
+       
         <!--..................................................conten..............................................-->
-         <div id="footer">
+    </section>    
             <?php include 'footer.php';?>
-         </div>
+        
         <!--..........................................footer....................................................-->
         
-    </div><!--contener-->
+    
 </body>
 </html>
